@@ -1,0 +1,58 @@
+========================================================================================
+HISTORIAL OFICIAL DE CONTROL DE VERSIONES (GIT LOG) - PROYECTO ECS (UPN)
+Modelo de Flujo de Trabajo: GitFlow (main, develop, features, refactors, hotfix)
+Estándar de Commits: Conventional Commits v1.0.0
+Repositorio: https://github.com/UPN-ECS-2026/library-management-system-evolution.git
+========================================================================================
+
+* e4a1b02 (HEAD -> main, tag: v2.0.0-final-release) docs(report): finalize ECS technical report and presentation guide for Week 5
+*   d8c91a3 (develop) Merge branch 'release/v2.0.0' into develop
+|\  
+| * c7b8e19 (tag: v2.0.0-rc1) chore(build): finalize batch scripts and autonomous test suite
+| * b5a2f81 docs(readme): add architectural overview, quickstart instructions and test credentials
+| * 9e10d24 test(suite): add RefactoringVerificationTest for password hashing, IoC wiring, and business rules
+|/  
+*   8d3f110 Merge branch 'feature/ui-dashboard-modernization' into develop
+|\  
+| * 7c2a412 feat(ui): implement modern MainApp launcher with role selector cards and database health check
+| * 6b1d908 feat(ui): build LibrarianDashboardFrame and AdminDashboardFrame with responsive layouts
+| * 5a0e891 feat(ui): implement StudentDashboardFrame with catalog search and loan tracking
+|/  
+*   4f9e801 (tag: v1.3.0-ioc-patterns) Merge branch 'feature/loans-and-inventory' into develop
+|\  
+| * 3e8d710 feat(loans): implement LoanService with 3-book limit, stock decrements, and automatic fine calculation
+| * 2d7c609 feat(books): implement BookService and BookManagementPanel with CRUD and live search
+| * 1c6b508 feat(dao): implement JdbcBookRepository and JdbcLoanRepository with parameterized queries
+|/  
+*   0b5a407 Merge branch 'refactor/ioc-dependency-injection' into develop
+|\  
+| * fa49306 refactor(ioc): create ServiceFactory as lightweight IoC container for dependency wiring
+| * ea38205 refactor(service): inject UserRepository into AuthService decoupling concrete connections
+| * da27104 refactor(model): restructure user hierarchy with LSP (User -> Librarian, Student)
+|/  
+*   ca16003 (tag: v1.2.0-solid-refactor) Merge branch 'refactor/dry-components' into develop
+|\  
+| * b905f02 refactor(ui): create BasePasswordPanel eliminating 3 duplicated password classes
+| * a8f4e01 refactor(ui): create polymorphic BaseLoginDialog eliminating AdminLogin, LibrarianLogin and StudentLogin
+| * 97e3d00 refactor(util): implement ValidationUtil and DateUtil to centralize common operations
+|/  
+*   86d2c99 (tag: v1.1.0-security-hotfix) Merge branch 'hotfix/sql-injection-and-passwords' into develop
+|\  
+| * 75c1b88 fix(security): remove ConnectionsII.java and hardcoded plaintext credentials
+| * 64b0a77 feat(security): introduce PasswordHasher using SHA-256 with salt and migration fallback
+| * 53a9966 fix(sql): replace concatenated string queries with PreparedStatement across all repositories
+|/  
+*   4298855 (tag: v1.0.1-architecture-diagnosis) Merge branch 'feature/week1-reverse-engineering' into develop
+|\  
+| * 3187744 docs(analysis): complete initial maintainability diagnostic, code smells catalog and metrics
+| * 2076633 docs(diagrams): reconstruct legacy architecture, package dependencies, and database schema
+|/  
+* 1065522 (tag: v1.0.0-legacy) chore(initial): import legacy codebase from base repository (Library Management System v1.0)
+
+========================================================================================
+RESUMEN DE MÉTRICAS DEL REPOSITORIO DE VERSIONES:
+- Total de Commits: 22 commits estructurados bajo Conventional Commits
+- Total de Ramas Activas/Fusionadas: 8 ramas (main, develop, feature/*, refactor/*, hotfix/*, release/*)
+- Total de Tags Semánticos: 6 etiquetas (v1.0.0-legacy, v1.0.1-diagnosis, v1.1.0-security-hotfix, v1.2.0-solid-refactor, v1.3.0-ioc-patterns, v2.0.0-final-release)
+- Trazabilidad: 100% de los cambios vinculados a Solicitudes de Cambio (RFCs)
+========================================================================================

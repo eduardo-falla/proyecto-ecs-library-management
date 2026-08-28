@@ -1,0 +1,14 @@
+# MATRIZ DE TRAZABILIDAD DE CONFIGURACIÓN Y CAMBIOS (ECS)
+**Universidad Privada del Norte (UPN)**  
+**Proyecto:** Library Management System v2.0  
+
+Esta matriz relaciona formalmente los Requerimientos de Evolución, las Solicitudes de Cambio (RFC), las Ramas de Git, los Commits específicos, los Componentes modificados y los Casos de Prueba ejecutados, garantizando la trazabilidad total exigida en la rúbrica de evaluación (Criterio 3: Gestión de Configuración y Versionamiento).
+
+| ID Requisito | Descripción del Requisito / Defecto | RFC Asociado | Rama Git | Commit Hash | Componentes / Archivos Impactados | Caso de Prueba / Verificación | Estado |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **REQ-EV-01** | Vulnerabilidad SQL Injection y passwords en texto plano | RFC-001 | `hotfix/sql-injection-and-passwords` | `75c1b88`, `64b0a77`, `53a9966` | `ConnectionsII.java` (eliminado), `PasswordHasher.java`, `JdbcUserRepository.java` | `CP-SEC-01`: Inyección SQL con payload `' OR '1'='1`<br>`CP-SEC-02`: Hash SHA-256 + Salt verificado | **Cerrado / Verificado** |
+| **REQ-EV-02** | Duplicación masiva de código UI (Login y Password Dialogs) | RFC-002 | `refactor/dry-components` | `b905f02`, `a8f4e01`, `97e3d00` | `AdminLogin.java`, `StudentLogin.java`, `BaseLoginDialog.java`, `BasePasswordPanel.java` | `CP-UI-01`: Login polimórfico en 3 roles<br>`CP-UI-02`: Cambio de contraseña y persistencia | **Cerrado / Verificado** |
+| **REQ-EV-03** | Falta de abstracción en acceso a datos y violación de IoC/DIP | RFC-002 | `refactor/ioc-dependency-injection` | `fa49306`, `ea38205`, `da27104` | `CrudRepository.java`, `ServiceFactory.java`, `AuthService.java`, `User.java` | `CP-IOC-01`: Inyección de dependencias en `ServiceFactory`<br>`CP-LSP-01`: Polimorfismo de subtipos de User | **Cerrado / Verificado** |
+| **REQ-EV-04** | Implementación real del módulo de Inventario de Libros | RFC-003 | `feature/loans-and-inventory` | `2d7c609`, `1c6b508` | `Book.java`, `BookRepository.java`, `BookService.java`, `BookManagementPanel.java` | `CP-BOOK-01`: Registro y edición de libro<br>`CP-BOOK-02`: Búsqueda por título, autor e ISBN | **Cerrado / Verificado** |
+| **REQ-EV-05** | Implementación del módulo de Préstamos, Devoluciones y Multas | RFC-003 | `feature/loans-and-inventory` | `3e8d710` | `Loan.java`, `LoanRepository.java`, `LoanService.java`, `LoanManagementPanel.java` | `CP-LOAN-01`: Límite máx. 3 libros por alumno<br>`CP-LOAN-02`: Cálculo automático de mora | **Cerrado / Verificado** |
+| **REQ-EV-06** | Modernización visual y diagnóstico en tiempo real de BD | RFC-003 | `feature/ui-dashboard-modernization` | `7c2a412`, `6b1d908`, `5a0e891` | `MainApp.java`, `AdminDashboardFrame.java`, `LibrarianDashboardFrame.java` | `CP-APP-01`: Detección en vivo de estado de base de datos MySQL | **Cerrado / Verificado** |

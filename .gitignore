@@ -1,0 +1,22 @@
+# Archivos temporales y de bloqueo
+*.tmp
+*.log
+~$*
+.DS_Store
+Thumbs.db
+
+# Compilados de Java
+*.class
+bin/
+target/
+
+# Herramientas locales temporales
+.mingit/
+mingit.zip
+check_gh.js
+create_github_repo.js
+build_and_push_git.js
+test_*.ps1
+test_*.doc*
+inspect_docx.ps1
+fix_layout.ps1

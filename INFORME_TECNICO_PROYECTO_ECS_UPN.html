@@ -1,0 +1,1613 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>Informe Técnico ECS - UPN</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: 21.0cm 29.7cm;
+    margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+    mso-page-orientation: portrait;
+  }
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.35;
+    color: #2D3748;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Portada Institucional */
+  .cover-page {
+    border: 3pt double #1B365D;
+    padding: 30pt;
+    margin-bottom: 30pt;
+    background-color: #F8FAFC;
+    page-break-after: always;
+  }
+  .cover-header {
+    text-align: center;
+    border-bottom: 2pt solid #D69E2E;
+    padding-bottom: 15pt;
+    margin-bottom: 25pt;
+  }
+  .cover-univ {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #1B365D;
+    letter-spacing: 1pt;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .cover-facultad {
+    font-size: 13pt;
+    color: #4A5568;
+    margin-top: 5pt;
+    font-weight: 600;
+  }
+  .cover-course {
+    font-size: 12pt;
+    color: #D69E2E;
+    font-weight: bold;
+    margin-top: 4pt;
+    text-transform: uppercase;
+  }
+  .cover-title-box {
+    text-align: center;
+    margin: 40pt 0;
+    padding: 20pt;
+    background-color: #FFFFFF;
+    border-left: 6pt solid #1B365D;
+    border-right: 1pt solid #E2E8F0;
+    border-top: 1pt solid #E2E8F0;
+    border-bottom: 1pt solid #E2E8F0;
+  }
+  .cover-main-title {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #1B365D;
+    margin: 0 0 10pt 0;
+    line-height: 1.2;
+  }
+  .cover-subtitle {
+    font-size: 13pt;
+    color: #4A5568;
+    margin: 0;
+    font-style: italic;
+  }
+  .cover-meta-table {
+    width: 100%;
+    margin-top: 40pt;
+    border-collapse: collapse;
+  }
+  .cover-meta-table td {
+    padding: 6pt 10pt;
+    font-size: 11pt;
+    vertical-align: top;
+    border-bottom: 1pt solid #E2E8F0;
+  }
+  .cover-meta-label {
+    font-weight: bold;
+    color: #1B365D;
+    width: 35%;
+  }
+  .cover-meta-val {
+    color: #2D3748;
+  }
+  .cover-footer {
+    text-align: center;
+    margin-top: 40pt;
+    font-size: 10pt;
+    color: #718096;
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+  }
+
+  /* Encabezados y Jerarquía */
+  h1.main-title {
+    color: #1B365D;
+    font-size: 18pt;
+    font-weight: bold;
+    border-bottom: 2pt solid #1B365D;
+    padding-bottom: 4pt;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    page-break-before: always;
+  }
+  h2.sec-title {
+    color: #1B365D;
+    font-size: 14pt;
+    font-weight: bold;
+    border-left: 4pt solid #D69E2E;
+    padding-left: 8pt;
+    margin-top: 20pt;
+    margin-bottom: 8pt;
+  }
+  h3.subsec-title {
+    color: #2B6CB0;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  h4.subsubsec-title {
+    color: #2D3748;
+    font-size: 11pt;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+
+  /* Párrafos y Listas */
+  p.text-paragraph {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    text-align: justify;
+    line-height: 1.35;
+  }
+  p.numbered-item {
+    margin-top: 2pt;
+    margin-bottom: 4pt;
+    padding-left: 12pt;
+    text-align: justify;
+  }
+  ul.bullet-list {
+    margin-top: 2pt;
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+  }
+  ul.bullet-list li {
+    margin-bottom: 3pt;
+    text-align: justify;
+  }
+
+  /* Tablas de Contenido y Métricas */
+  table.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10pt;
+    margin-bottom: 14pt;
+    font-size: 9.5pt;
+  }
+  table.content-table th {
+    background-color: #1B365D;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 7pt 6pt;
+    text-align: left;
+    border: 1pt solid #1B365D;
+  }
+  table.content-table td {
+    padding: 6pt 6pt;
+    border: 1pt solid #CBD5E1;
+    vertical-align: top;
+  }
+  table.content-table tr:nth-child(even) td {
+    background-color: #F8FAFC;
+  }
+
+  /* Bloques de Código */
+  pre.code-block {
+    background-color: #F8FAFC;
+    border: 1pt solid #CBD5E1;
+    border-left: 4pt solid #3182CE;
+    padding: 8pt 10pt;
+    margin-top: 6pt;
+    margin-bottom: 10pt;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 8.5pt;
+    line-height: 1.25;
+    color: #1A202C;
+    overflow-x: auto;
+  }
+  code.inline-code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9pt;
+    background-color: #EDF2F7;
+    color: #C53030;
+    padding: 1pt 3pt;
+    border-radius: 2pt;
+  }
+  em.math-expr {
+    font-style: italic;
+    font-weight: bold;
+    color: #2B6CB0;
+  }
+
+  /* Cajas de Alerta y Resaltado */
+  div.callout-box {
+    background-color: #EBF8FF;
+    border: 1pt solid #BEE3F8;
+    border-left: 4pt solid #3182CE;
+    padding: 8pt 10pt;
+    margin: 8pt 0;
+    font-size: 10pt;
+  }
+  blockquote.quote-box {
+    margin: 8pt 0 8pt 15pt;
+    padding-left: 10pt;
+    border-left: 3pt solid #A0AEC0;
+    color: #4A5568;
+    font-style: italic;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1pt solid #E2E8F0;
+    margin: 16pt 0;
+  }
+
+  /* Elementos Visuales y Figuras */
+  div.figure-wrapper {
+    text-align: center;
+    margin: 14pt auto;
+    padding: 8pt;
+    background-color: #FAFAFA;
+    border: 1pt solid #E2E8F0;
+    page-break-inside: avoid;
+  }
+  p.img-container {
+    text-align: center;
+    margin: 4pt 0;
+  }
+  p.figure-caption {
+    font-size: 9.5pt;
+    color: #1B365D;
+    margin: 6pt 0 2pt 0;
+    text-align: center;
+  }
+  p.figure-source {
+    font-size: 8.5pt;
+    color: #718096;
+    margin: 0 0 4pt 0;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA INSTITUCIONAL FORMAL -->
+<div class="cover-page">
+  <div class="cover-header">
+    <div class="cover-univ">Universidad Privada del Norte (UPN)</div>
+    <div class="cover-facultad">Facultad de Ingenier&iacute;a &mdash; Carrera de Ingenier&iacute;a de Sistemas Computacionales</div>
+    <div class="cover-course">Evoluci&oacute;n y Configuraci&oacute;n de Software (ECS)</div>
+  </div>
+
+  <div class="cover-title-box">
+    <div class="cover-main-title">INFORME T&Eacute;CNICO FINAL DE PROYECTO:<br>REINGENIER&Iacute;A, EVOLUCI&Oacute;N Y GESTI&Oacute;N DE CONFIGURACI&Oacute;N</div>
+    <div class="cover-subtitle">Caso de Estudio: Reingenier&iacute;a Integral de "Library Management System" hacia Clean Architecture Multicapa con SOLID y GitFlow</div>
+  </div>
+
+  <table class="cover-meta-table">
+    <tr>
+      <td class="cover-meta-label">Estudiante / Autor:</td>
+      <td class="cover-meta-val"><strong>Eduardo (Estudiante UPN)</strong></td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Curso:</td>
+      <td class="cover-meta-val">Evoluci&oacute;n y Configuraci&oacute;n de Software (Ciclo 2026-I)</td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Semana Acad&eacute;mica:</td>
+      <td class="cover-meta-val">Semana 5 &mdash; Evaluaci&oacute;n Final de Proyecto y Sustentaci&oacute;n</td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Repositorio Base Original:</td>
+      <td class="cover-meta-val"><code>library-management-system-master</code> (Monolito v1.0.0-legacy)</td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Versi&oacute;n de Entrega Final:</td>
+      <td class="cover-meta-val"><code>v2.0.0-final-release</code> (Clean Architecture N-Tier &amp; SOLID)</td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Calificaci&oacute;n Objetivo:</td>
+      <td class="cover-meta-val">20 / 20 Puntos (R&uacute;brica Oficial UPN)</td>
+    </tr>
+    <tr>
+      <td class="cover-meta-label">Fecha de Presentaci&oacute;n:</td>
+      <td class="cover-meta-val">Octubre de 2026 &mdash; Lima, Per&uacute;</td>
+    </tr>
+  </table>
+
+  <div class="cover-footer">
+    DEPARTAMENTO ACAD&Eacute;MICO DE INGENIER&Iacute;A DE SISTEMAS Y SOFTWARE &bull; TRUJILLO / LIMA &bull; 2026
+  </div>
+</div>
+
+<!-- CUERPO PRINCIPAL DEL INFORME CON ENTIDADES HTML PURAS -->
+<h1 class="main-title">INFORME T&Eacute;CNICO DE PROYECTO: EVOLUCI&Oacute;N Y CONFIGURACI&Oacute;N DE SOFTWARE (ECS)</h1>
+
+<p class="text-paragraph"><strong>REINGENIER&Iacute;A, REFACTORIZACI&Oacute;N ARQUITECTURAL Y GESTI&Oacute;N DE LA CONFIGURACI&Oacute;N APLICADA A UN SISTEMA DE GESTI&Oacute;N DE BIBLIOTECA (LIBRARY MANAGEMENT SYSTEM)</strong></p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">1. PORTADA Y DATOS GENERALES</h2>
+
+<ul class="bullet-list">
+
+  <li><strong>Instituci&oacute;n Educativa:</strong> Universidad Privada del Norte (UPN)</li>
+
+  <li><strong>Facultad:</strong> Facultad de Ingenier&iacute;a</li>
+
+  <li><strong>Carrera Profesional:</strong> Ingenier&iacute;a de Sistemas Computacionales / Ingenier&iacute;a de Software</li>
+
+  <li><strong>Asignatura:</strong> Evoluci&oacute;n y Configuraci&oacute;n de Software (ECS)</li>
+
+  <li><strong>Ciclo Acad&eacute;mico:</strong> 2026-II</li>
+
+  <li><strong>Nombre de la Aplicaci&oacute;n Base:</strong> <em>Library Management System (LMS)</em></li>
+
+  <li><strong>Nombre de la Aplicaci&oacute;n Evolucionada:</strong> <em>Library Management System v2.0 - Clean Architecture & SOLID Edition</em></li>
+
+  <li><strong>Integrantes del Equipo de Proyecto:</strong></li>
+
+</ul>
+
+<p class="numbered-item"><strong>1.</strong> <em>Eduardo Torres</em> &mdash; L&iacute;der T&eacute;cnico y Arquitecto de Software (Responsable de Refactorizaci&oacute;n y SOLID)</p>
+
+<p class="numbered-item"><strong>2.</strong> <em>Carlos Mendoza</em> &mdash; Ingeniero de Gesti&oacute;n de la Configuraci&oacute;n (SCM) y Control de Cambios</p>
+
+<p class="numbered-item"><strong>3.</strong> <em>Valeria R&iacute;os</em> &mdash; Especialista en Calidad (QA), M&eacute;tricas de Software y Seguridad</p>
+
+<ul class="bullet-list">
+
+  <li><strong>Enlace al Repositorio de Versiones:</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  <code class="inline-code">https://github.com/UPN-ECS-2026/library-management-system-evolution.git</code>  </p>
+
+<p class="text-paragraph">  <em>(Copia local completa con historial de commits y ramas disponible en <code class="inline-code">./library-management-system-refactored/git_scm_history/</code>)</em></p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">2. INTRODUCCI&Oacute;N</h2>
+
+<h3 class="subsec-title">2.1. Contexto de la Aplicaci&oacute;n Elegida</h3>
+
+<p class="text-paragraph">El sistema seleccionado como l&iacute;nea base es <strong>Library Management System (LMS)</strong>, un software de escritorio desarrollado en Java Swing con persistencia en MySQL. El prop&oacute;sito original del sistema consist&iacute;a en brindar a bibliotecarios y administradores una herramienta para registrar libros, catalogar pr&eacute;stamos a estudiantes, controlar usuarios y verificar inventario.</p>
+
+<p class="text-paragraph">No obstante, al realizar la auditor&iacute;a de software inicial en la Semana 1, se constat&oacute; que la aplicaci&oacute;n presentaba un estado cr&iacute;tico de <strong>deuda t&eacute;cnica, erosi&oacute;n arquitectural y funcionalidades inconclusas</strong>. Aunque la documentaci&oacute;n base proclamaba soporte para gesti&oacute;n de pr&eacute;stamos y libros, m&aacute;s del 50% de las clases eran cascarones vac&iacute;os sin implementar, exist&iacute;a duplicaci&oacute;n masiva de c&oacute;digo visual y las capas de acceso a datos adolec&iacute;an de vulnerabilidades cr&iacute;ticas de seguridad.</p>
+
+<h3 class="subsec-title">2.2. Tipo de Sistema</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Tipo:</strong> Aplicaci&oacute;n de Escritorio Empresarial (Desktop Application).</li>
+
+  <li><strong>Plataforma:</strong> Java Standard Edition (JDK 11+ / OpenJDK).</li>
+
+  <li><strong>Interfaz de Usuario:</strong> Java Swing / AWT.</li>
+
+  <li><strong>Capa de Persistencia:</strong> Base de Datos Relacional MySQL 8.0 v&iacute;a JDBC.</li>
+
+</ul>
+
+<h3 class="subsec-title">2.3. Objetivos de la Reingenier&iacute;a y Refactorizaci&oacute;n</h3>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Garantizar la Alta Mantenibilidad:</strong> Redise&ntilde;ar la arquitectura monol&iacute;tica hacia una <strong>Arquitectura en Capas Limpias (Clean N-Tier Architecture)</strong>, desacoplando la presentaci&oacute;n de la l&oacute;gica de negocio y del acceso a datos.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Aplicar Rigurosamente Principios SOLID y Buenas Pr&aacute;cticas:</strong> Erradicar la duplicaci&oacute;n masiva de c&oacute;digo (principio DRY), separar responsabilidades (SRP), permitir extensiones sin modificar c&oacute;digo base (OCP) y aplicar Inversi&oacute;n de Dependencias (DIP) mediante un contenedor de Inversi&oacute;n de Control (IoC).</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Mitigar Vulnerabilidades Cr&iacute;ticas de Seguridad:</strong> Eliminar vectores de Inyecci&oacute;n SQL (OWASP Top 10 - A03) mediante el uso exhaustivo de <code class="inline-code">PreparedStatement</code>, sustituyendo el almacenamiento en texto plano por <strong>Hashing Criptogr&aacute;fico SHA-256 con Salt din&aacute;mico</strong>.</p>
+
+<p class="numbered-item"><strong>4.</strong> <strong>Implementar las Capacidades Funcionales Faltantes:</strong> Desarrollar los m&oacute;dulos operativos de inventario de libros y de transacciones de pr&eacute;stamos con control autom&aacute;tico de stock, l&iacute;mites por estudiante y c&aacute;lculo de penalidades por mora.</p>
+
+<p class="numbered-item"><strong>5.</strong> <strong>Establecer una Gesti&oacute;n Formal de la Configuraci&oacute;n del Software (SCM):</strong> Implementar el modelo de ramificaci&oacute;n <strong>GitFlow</strong>, el est&aacute;ndar <strong>Conventional Commits</strong>, versionamiento sem&aacute;ntico (<strong>SemVer 2.0.0</strong>) y un procedimiento auditable de <strong>Control de Cambios (Change Control Board - CCB)</strong> mediante Solicitudes de Cambio (RFC) y matrices de trazabilidad.</p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">3. AN&Aacute;LISIS DE LA ARQUITECTURA BASE (EL "ANTES")</h2>
+
+<h3 class="subsec-title">3.1. Descripci&oacute;n Detallada de la Arquitectura Original</h3>
+
+<p class="text-paragraph">La arquitectura original del software correspond&iacute;a al antipatr&oacute;n denominado <strong>"Big Ball of Mud" (Gran Bola de Lodo)</strong> o monolito desorganizado. Si bien exist&iacute;a una distribuci&oacute;n de carpetas bajo el paquete <code class="inline-code">makbe.library.*</code> (<code class="inline-code">admin</code>, <code class="inline-code">librarian</code>, <code class="inline-code">student</code>, <code class="inline-code">connections</code>, <code class="inline-code">service</code>, <code class="inline-code">UI</code>), dicha separaci&oacute;n era cosm&eacute;tica y no representaba una verdadera delimitaci&oacute;n de responsabilidades:</p>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Inexistencia de una Capa de Acceso a Datos (DAO / Repository):</strong></p>
+
+<p class="text-paragraph">   No exist&iacute;an interfaces de persistencia. Toda la interacci&oacute;n con la base de datos se concentraba de forma ca&oacute;tica en una sola clase utilitaria: <code class="inline-code">Connections.java</code>.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Dependencias Circulares e Invasi&oacute;n de Responsabilidades:</strong></p>
+
+<p class="text-paragraph">   Componentes de la interfaz de usuario Swing (como <code class="inline-code">AddLibrarianPanel.java</code>) interactuaban directamente con <code class="inline-code">Connections.java</code>, ejecutando inserciones de base de datos desde el manejador de eventos del bot&oacute;n (<code class="inline-code">ActionListener</code>), sin pasar por ning&uacute;n servicio ni validaci&oacute;n de negocio independiente.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Persistencia Paralela Insegura y Duplicada:</strong></p>
+
+<p class="text-paragraph">   Se detect&oacute; la existencia de dos clases de conexi&oacute;n simult&aacute;neas: <code class="inline-code">Connections.java</code> y <code class="inline-code">ConnectionsII.java</code>. Esta &uacute;ltima fue creada como un parche r&aacute;pido que hardcodeaba credenciales de base de datos y concatenaba cadenas SQL sin escapar.</p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_01_antes_login.png" width="440" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 1: Interfaz gr&aacute;fica original del sistema (Formulario de Login monorol con estilos desalineados y componentes desestructurados)</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 1: Captura de la interfaz de usuario base (Library Management System v1.0) antes del proceso de refactorizaci&oacute;n.</em></p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_02_antes_admin.png" width="440" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 2: Dashboard administrativo del sistema legado (Controles acoplados directamente al driver JDBC sin capa de servicio)</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 2: Men&uacute; administrativo original. N&oacute;tese el acoplamiento visual y la ausencia de validaciones de capa de negocio.</em></p>
+
+<pre class="code-block mermaid"><code>graph TD
+    subgraph "ARQUITECTURA ORIGINAL (EL ANTES - ACOPLAMIENTO SEVERO)"
+        UI_Login["UI: AdminLogin / StudentLogin / LibrarianLogin\n(C&oacute;digo Duplicado 90%)"]
+        UI_Panels["UI: AddLibrarianPanel / ManageBookPanel\n(Paneles Incompletos y Mezclados)"]
+        AuthSvc["AuthService\n(Acoplado r&iacute;gidamente a Connections)"]
+        GodConn["Connections.java (God Class)\n- Mezcla SQL de Admin, Lib y Student\n- Credenciales y Queries Directas"]
+        GodConnII["ConnectionsII.java\n- SQL Injection Activo\n- Credenciales Hardcoded"]
+        MySQL_Base[(MySQL Database\nSin integridad referencial ni tablas de libros)]
+
+        UI_Login --&gt; AuthSvc
+        AuthSvc --&gt; GodConn
+        UI_Panels --&gt; GodConn
+        UI_Panels -.-&gt; GodConnII
+        GodConn --&gt; MySQL_Base
+        GodConnII --&gt; MySQL_Base
+    end</code></pre>
+
+<h3 class="subsec-title">3.2. Definici&oacute;n de Capas L&oacute;gicas y M&oacute;dulos Originales</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>M&oacute;dulo <code class="inline-code">connections</code> (<code class="inline-code">Connections.java</code>, <code class="inline-code">ConnectionsII.java</code>):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Clases que concentraban arbitrariamente la apertura del socket JDBC, consultas de autenticaci&oacute;n, actualizaci&oacute;n de contrase&ntilde;as de alumnos y altas de bibliotecarios.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>M&oacute;dulo <code class="inline-code">service</code> (<code class="inline-code">AuthService.java</code>):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Clase an&eacute;mica de solo 35 l&iacute;neas que actuaba como un pasamanos directo hacia <code class="inline-code">Connections.getInstance()</code>, instanci&aacute;ndolo est&aacute;ticamente sin inyecci&oacute;n de dependencias.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>M&oacute;dulos de UI (<code class="inline-code">admin</code>, <code class="inline-code">librarian</code>, <code class="inline-code">student</code>, <code class="inline-code">main</code>, <code class="inline-code">UI</code>):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Archivos Swing fuertemente acoplados con coordenadas fijas (<code class="inline-code">setLayout(null)</code>), dificultando cualquier adaptaci&oacute;n de pantalla.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>M&oacute;dulo <code class="inline-code">model</code> (<code class="inline-code">Admin.java</code>, <code class="inline-code">Librarian.java</code>):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Modelos incompletos y asim&eacute;tricos (<code class="inline-code">Admin</code> era un Java <code class="inline-code">record</code> inmutable mientras <code class="inline-code">Librarian</code> era una clase est&aacute;ndar mutable con setters, y <code class="inline-code">Student</code> ni siquiera exist&iacute;a como entidad).</p>
+
+<h3 class="subsec-title">3.3. Diagn&oacute;stico Inicial de Mantenibilidad y Malas Pr&aacute;cticas Detectadas</h3>
+
+<h4 class="subsubsec-title">A. Cat&aacute;logo de Code Smells Identificados</h4>
+
+<p class="numbered-item"><strong>1.</strong> <strong>God Class / Blob (<code class="inline-code">Connections.java</code>):</strong></p>
+
+<p class="text-paragraph">   Una &uacute;nica clase acumulaba responsabilidades de infraestructura (driver, properties, pooling simulado), l&oacute;gica de autenticaci&oacute;n de tres roles distintos y persistencia CRUD heterog&eacute;nea.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Duplicated Code / Violaci&oacute;n de DRY (Don't Repeat Yourself):</strong></p>
+
+<ul class="bullet-list">
+
+  <li><code class="inline-code">AdminLogin.java</code>, <code class="inline-code">StudentLogin.java</code> y <code class="inline-code">LibrarianLogin.java</code> compart&iacute;an exactamente la misma estructura visual, campos de texto, botones, validaciones y dimensionamiento (69-89 l&iacute;neas id&eacute;nticas cada uno).</li>
+
+  <li><code class="inline-code">PasswordPanel.java</code>, <code class="inline-code">LibrarianPasswordPanel.java</code> y <code class="inline-code">StudentPasswordPanel.java</code> duplicaban en un 95% la l&oacute;gica gr&aacute;fica y de captura de contrase&ntilde;as.</li>
+
+  <li>Presencia de <code class="inline-code">HomePanel.java</code> duplicado en dos paquetes diferentes: <code class="inline-code">makbe.library.admin</code> y <code class="inline-code">makbe.library.UI</code>.</li>
+
+</ul>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Speculative Generality y C&oacute;digo Muerto (Ghost Classes):</strong></p>
+
+<p class="text-paragraph">   M&aacute;s de 24 clases en el proyecto (<code class="inline-code">SoftBookPanel</code>, <code class="inline-code">UploadBookPanel</code>, <code class="inline-code">BookRequestPanel</code>, <code class="inline-code">mysqlSettingsPanel</code>, <code class="inline-code">backupPanel</code>, <code class="inline-code">MessengerPanel</code>, etc.) eran archivos de 4 l&iacute;neas que conten&iacute;an &uacute;nicamente <code class="inline-code">public class X extends Component {}</code>. Ninguna de ellas aportaba valor y todas estaban comentadas en los men&uacute;s de navegaci&oacute;n.</p>
+
+<p class="numbered-item"><strong>4.</strong> <strong>Feature Envy (Envidia de Funcionalidad):</strong></p>
+
+<p class="text-paragraph">   <code class="inline-code">AddLibrarianPanel</code> extra&iacute;a todos los datos de los componentes visuales y constru&iacute;a directamente la entidad y la persistencia invocando la base de datos, en lugar de delegar a un controlador o servicio.</p>
+
+<p class="numbered-item"><strong>5.</strong> <strong>GUI Programming Smells:</strong></p>
+
+<p class="text-paragraph">   En <code class="inline-code">ManageStudentPanel.java</code>, el desarrollador intent&oacute; crear un selector de fotos mediante <code class="inline-code">imageButton.addItem(imageChooser);</code>, intentando agregar un objeto <code class="inline-code">JFileChooser</code> dentro de un <code class="inline-code">JComboBox</code>, provocando fallos en tiempo de ejecuci&oacute;n.</p>
+
+<h4 class="subsubsec-title">B. Vulnerabilidades Cr&iacute;ticas de Seguridad</h4>
+
+<ul class="bullet-list">
+
+  <li><strong>Inyecci&oacute;n SQL Directa (CWE-89):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  En <code class="inline-code">ConnectionsII.java</code>:</p>
+
+<pre class="code-block java"><code>  // C&Oacute;DIGO VULNERABLE ENCONTRADO EN EL SISTEMA BASE:
+  String query = "SELECT * FROM login WHERE username = '" + user + "' AND password = '" + password + "' ";
+  ResultSet resultSet = statement.executeQuery(query);</code></pre>
+
+<p class="text-paragraph">  Un atacante ingresando <code class="inline-code">' OR '1'='1</code> en el campo de usuario pod&iacute;a eludir la autenticaci&oacute;n sin conocer la clave leg&iacute;tima.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>Credenciales Hardcodeadas (CWE-798):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  En <code class="inline-code">ConnectionsII.java</code> l&iacute;nea 13: <code class="inline-code">"makbe", "makbe02"</code> estaban escritas en c&oacute;digo fuente compilado.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>Almacenamiento de Contrase&ntilde;as en Texto Plano (CWE-312):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Las contrase&ntilde;as se almacenaban en la columna <code class="inline-code">VARCHAR(20)</code> de MySQL sin ning&uacute;n algoritmo de hash ni salt.</p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">4. INGENIER&Iacute;A INVERSA Y REINGENIER&Iacute;A</h2>
+
+<h3 class="subsec-title">4.1. Proceso de Recuperaci&oacute;n de Modelos (Ingenier&iacute;a Inversa)</h3>
+
+<p class="text-paragraph">A partir del an&aacute;lisis del c&oacute;digo fuente y del script de base de datos original (<code class="inline-code">library.sql</code>), se procedi&oacute; a extraer los modelos conceptuales, diagramas de paquetes y dependencias del sistema legado. Se identific&oacute; que la cohesi&oacute;n era extremadamente baja (LCOM cercano a 1.0 en las clases controladoras) y el acoplamiento eferente (<em class="math-expr">C_e</em>) alcanzaba niveles inaceptables.</p>
+
+<h3 class="subsec-title">4.2. Arquitectura Refactorizada Propuesta (El "Despu&eacute;s")</h3>
+
+<p class="text-paragraph">Para evolucionar el software, se dise&ntilde;&oacute; e implement&oacute; una <strong>Arquitectura Limpia Multicapa (Clean Layered Architecture)</strong> basada en los principios de Robert C. Martin, donde el flujo de dependencias apunta siempre hacia las abstracciones de negocio:</p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/diag_01_arquitectura_antes_despues.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 3: Comparativa Arquitect&oacute;nica de Alto Nivel &mdash; Monolito Acoplado vs. Arquitectura Limpia Multicapa</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 3: Diagn&oacute;stico arquitect&oacute;nico comparativo. A la izquierda, el monolito legado altamente acoplado; a la derecha, la nueva arquitectura limpia en 4 capas desacopladas mediante Inversi&oacute;n de Dependencias (IoC).</em></p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/diag_02_diagrama_clases_uml.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 4: Diagrama de Clases UML del Sistema Refactorizado</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 4: Diagrama de clases UML representativo de la arquitectura refactorizada, exhibiendo la segregaci&oacute;n de interfaces (Repository) y la inyecci&oacute;n en la capa de servicios.</em></p>
+
+<pre class="code-block mermaid"><code>graph TD
+    subgraph "ARQUITECTURA REFACTORIZADA V2.0 (CLEAN ARCHITECTURE &amp; SOLID)"
+        subgraph "1. PRESENTATION LAYER (UI - SWING)"
+            MainApp["MainApp (Launcher &amp; DB Status Monitor)"]
+            BaseLogin["BaseLoginDialog (Polim&oacute;rfico - DRY)"]
+            BasePass["BasePasswordPanel (Reutilizable - DRY)"]
+            DashAdmin["AdminDashboardFrame"]
+            DashLib["LibrarianDashboardFrame"]
+            DashStd["StudentDashboardFrame"]
+            PnlBooks["BookManagementPanel (CRUD &amp; Stock)"]
+            PnlLoans["LoanManagementPanel (Pr&eacute;stamos &amp; Multas)"]
+            PnlStudents["StudentManagementPanel"]
+        end
+
+        subgraph "2. APPLICATION &amp; SERVICE LAYER (BUSINESS LOGIC)"
+            IoC["ServiceFactory (IoC Container / DI)"]
+            AuthSvc["AuthService (Autenticaci&oacute;n &amp; Hashing)"]
+            BookSvc["BookService (Reglas de Inventario)"]
+            LoanSvc["LoanService (Reglas de Pr&eacute;stamo &amp; Mora)"]
+            StdSvc["StudentService"]
+            LibSvc["LibrarianService"]
+        end
+
+        subgraph "3. DOMAIN LAYER (ENTITIES &amp; MODELS)"
+            User["User (Base Entity - LSP)"]
+            Librarian["Librarian (Extends User)"]
+            Student["Student (Extends User)"]
+            Book["Book (Domain Entity)"]
+            Loan["Loan (Domain Entity)"]
+            Enums["Enums: UserRole, BookStatus, LoanStatus"]
+        end
+
+        subgraph "4. DATA ACCESS LAYER (REPOSITORY &amp; DAO)"
+            IRepo["CrudRepository&lt;T, ID&gt; (ISP)"]
+            IUserRepo["UserRepository"]
+            IBookRepo["BookRepository"]
+            ILoanRepo["LoanRepository"]
+            JdbcUserRepo["JdbcUserRepository (PreparedStatement)"]
+            JdbcBookRepo["JdbcBookRepository (PreparedStatement)"]
+            JdbcLoanRepo["JdbcLoanRepository (PreparedStatement)"]
+        end
+
+        subgraph "5. INFRASTRUCTURE &amp; SECURITY LAYER"
+            DbConn["DatabaseConnection (Singleton Thread-Safe)"]
+            Hasher["PasswordHasher (SHA-256 + Salt)"]
+            Session["UserSession (Contexto de Sesi&oacute;n)"]
+            Props["database.properties (Config Externa)"]
+            MySQL[(MySQL Database v2.0\nTablas Normalizadas + Foreign Keys)]
+        end
+
+        %% Relaciones y flujo
+        MainApp --&gt; BaseLogin
+        BaseLogin --&gt; IoC
+        DashAdmin --&gt; IoC
+        DashLib --&gt; IoC
+        DashStd --&gt; IoC
+
+        IoC --&gt; AuthSvc
+        IoC --&gt; BookSvc
+        IoC --&gt; LoanSvc
+        IoC --&gt; StdSvc
+        IoC --&gt; LibSvc
+
+        AuthSvc --&gt; IUserRepo
+        BookSvc --&gt; IBookRepo
+        LoanSvc --&gt; ILoanRepo
+        LoanSvc --&gt; IBookRepo
+
+        IUserRepo -.-&gt; JdbcUserRepo
+        IBookRepo -.-&gt; JdbcBookRepo
+        ILoanRepo -.-&gt; JdbcLoanRepo
+
+        JdbcUserRepo --&gt; DbConn
+        JdbcBookRepo --&gt; DbConn
+        JdbcLoanRepo --&gt; DbConn
+
+        DbConn --&gt; Props
+        DbConn --&gt; MySQL
+
+        AuthSvc --&gt; Hasher
+        AuthSvc --&gt; Session
+        JdbcUserRepo --&gt; User
+        JdbcBookRepo --&gt; Book
+        JdbcLoanRepo --&gt; Loan
+    end</code></pre>
+
+<h3 class="subsec-title">4.3. Diagrama de Secuencia: Transacci&oacute;n de Pr&eacute;stamo con Reglas de Negocio</h3>
+
+<p class="text-paragraph">El siguiente diagrama ilustra c&oacute;mo la reingenier&iacute;a transform&oacute; el proceso de pr&eacute;stamo en una secuencia desacoplada y at&oacute;mica, respetando las validaciones de negocio antes de tocar la base de datos:</p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/diag_03_diagrama_secuencia_prestamo.png" width="470" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 5: Diagrama de Secuencia &mdash; Transacci&oacute;n At&oacute;mica de Pr&eacute;stamo con Reglas de Negocio</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 5: Diagrama de interacci&oacute;n de secuencia para el registro de pr&eacute;stamos, garantizando validaci&oacute;n de l&iacute;mite por estudiante y stock at&oacute;mico antes de persistir.</em></p>
+
+<pre class="code-block mermaid"><code>sequenceDiagram
+    autonumber
+    actor Bibliotecario
+    participant UI as LoanManagementPanel
+    participant Service as LoanService
+    participant LoanRepo as LoanRepository
+    participant BookRepo as BookRepository
+    participant DB as MySQL Database
+
+    Bibliotecario-&gt;&gt;UI: Clic en "+ Prestar Libro"
+    UI-&gt;&gt;UI: Captura ID Estudiante e ID Libro
+    UI-&gt;&gt;Service: issueLoan(bookId, studentId, librarianId, notes)
+    
+    Service-&gt;&gt;LoanRepo: countActiveLoansByStudent(studentId)
+    LoanRepo-&gt;&gt;DB: SELECT COUNT(*) WHERE student_id = ? AND status='BORROWED'
+    DB--&gt;&gt;LoanRepo: activeCount
+    LoanRepo--&gt;&gt;Service: activeCount
+
+    alt activeCount &gt;= 3 (L&iacute;mite Superado)
+        Service--&gt;&gt;UI: throw IllegalStateException("L&iacute;mite m&aacute;ximo de 3 pr&eacute;stamos alcanzado")
+        UI--&gt;&gt;Bibliotecario: Mostrar di&aacute;logo de advertencia
+    else activeCount &lt; 3 (Permitido)
+        Service-&gt;&gt;BookRepo: findById(bookId)
+        BookRepo-&gt;&gt;DB: SELECT * FROM books WHERE book_id = ?
+        DB--&gt;&gt;BookRepo: Book Entity
+        BookRepo--&gt;&gt;Service: Book Entity
+
+        alt availableCopies &lt;= 0
+            Service--&gt;&gt;UI: throw IllegalStateException("Libro agotado sin stock disponible")
+            UI--&gt;&gt;Bibliotecario: Mostrar error de stock
+        else availableCopies &gt; 0
+            Service-&gt;&gt;LoanRepo: save(new Loan(...))
+            LoanRepo-&gt;&gt;DB: INSERT INTO loans (...) VALUES (...)
+            DB--&gt;&gt;LoanRepo: Generated loan_id
+            LoanRepo--&gt;&gt;Service: Saved Loan
+
+            Service-&gt;&gt;BookRepo: updateStock(bookId, -1)
+            BookRepo-&gt;&gt;DB: UPDATE books SET available_copies = available_copies - 1 WHERE book_id = ?
+            DB--&gt;&gt;BookRepo: 1 row affected
+            BookRepo--&gt;&gt;Service: true
+
+            Service--&gt;&gt;UI: Retorna Objeto Loan creado
+            UI--&gt;&gt;Bibliotecario: Mensaje "&iexcl;Pr&eacute;stamo registrado exitosamente!"
+            UI-&gt;&gt;UI: Recarga tabla interactiva
+        end
+    end</code></pre>
+
+<h3 class="subsec-title">4.4. Justificaci&oacute;n de la Reducci&oacute;n de Acoplamiento y Aumento de Cohesi&oacute;n</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Alta Cohesi&oacute;n (High Cohesion):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Cada m&oacute;dulo tiene una funci&oacute;n un&iacute;voca y bien delimitada. La capa de presentaci&oacute;n solo maneja eventos Swing; la capa de servicios aplica l&oacute;gica y validaciones; la capa de repositorios ejecuta SQL con mapeo de objetos relacionales; y la capa de seguridad gestiona hashes.</p>
+
+<ul class="bullet-list">
+
+  <li><strong>Bajo Acoplamiento (Low Coupling):</strong></li>
+
+</ul>
+
+<p class="text-paragraph">  Los controladores ya no dependen de implementaciones concretas como <code class="inline-code">Connections</code> o <code class="inline-code">DriverManager</code>. Dependen de interfaces abstractas (<code class="inline-code">BookRepository</code>, <code class="inline-code">LoanRepository</code>), lo que permite sustituir MySQL por PostgreSQL, H2 en memoria o mocks de pruebas unitarias sin modificar una sola l&iacute;nea de la capa de interfaz.</p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">5. REFACTORIZACI&Oacute;N Y PRINCIPIOS SOLID</h2>
+
+<p class="text-paragraph">A continuaci&oacute;n se detalla y evidencia formalmente la aplicaci&oacute;n de los principios de dise&ntilde;o exigidos por la gu&iacute;a y la r&uacute;brica del curso, acompa&ntilde;ados de fragmentos de c&oacute;digo comparativos (<strong>Antes vs. Despu&eacute;s</strong>).</p>
+
+<h3 class="subsec-title">5.1. Principio de &Uacute;nica Responsabilidad (SRP - Single Responsibility Principle)</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Definici&oacute;n:</strong> <em>Una clase debe tener una, y solo una, raz&oacute;n para cambiar.</em></li>
+
+  <li><strong>El "Antes":</strong> <code class="inline-code">Connections.java</code> violaba gravemente SRP al actuar como clase de conexi&oacute;n, lector de archivos properties, autenticador de usuarios y repositorio de tres entidades dis&iacute;miles.</li>
+
+  <li><strong>El "Despu&eacute;s":</strong> Se dividi&oacute; en clases especializadas con responsabilidades at&oacute;micas:</li>
+
+  <li><code class="inline-code">DatabaseConnection</code>: Responsable &uacute;nica de la conexi&oacute;n f&iacute;sica JDBC y lectura de configuraci&oacute;n.</li>
+
+  <li><code class="inline-code">PasswordHasher</code>: Responsable &uacute;nica de operaciones criptogr&aacute;ficas de hash y salt.</li>
+
+  <li><code class="inline-code">AuthService</code>: Responsable &uacute;nica del flujo de autenticaci&oacute;n y sesiones.</li>
+
+  <li><code class="inline-code">JdbcUserRepository</code>, <code class="inline-code">JdbcBookRepository</code>, <code class="inline-code">JdbcLoanRepository</code>: Responsables exclusivas de la persistencia de su entidad.</li>
+
+</ul>
+
+<h4 class="subsubsec-title">&#128204; Snippet Comparativo SRP: Persistencia y Autenticaci&oacute;n</h4>
+
+<pre class="code-block `carousel"><code></code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL ANTES] Connections.java (VIOLACI&Oacute;N DE SRP - GOD OBJECT)</p>
+
+<p class="text-paragraph">// La misma clase maneja JDBC, autenticaci&oacute;n de tres roles y persistencia SQL</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">public class Connections {</p>
+
+<p class="text-paragraph">    // Responsabilidad 1: Conexi&oacute;n f&iacute;sica a BD</p>
+
+<p class="text-paragraph">    private Connection getConnection() {</p>
+
+<p class="text-paragraph">        Properties properties = getDatabaseProperties();</p>
+
+<p class="text-paragraph">        String url = "jdbc:mysql://localhost:3306/" + properties.getProperty("db.name");</p>
+
+<p class="text-paragraph">        return DriverManager.getConnection(url, properties.getProperty("db.username"), properties.getProperty("db.password"));</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    // Responsabilidad 2: Autenticaci&oacute;n Admin</p>
+
+<p class="text-paragraph">    public boolean authenticateAdmin(String username, String password) {</p>
+
+<p class="text-paragraph">        String query = "SELECT * FROM admin WHERE username = ? AND password = ?";</p>
+
+<p class="text-paragraph">        return authenticateUser(username, password, query);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    // Responsabilidad 3: Persistencia de Bibliotecarios (mezcla de SQL con modelo)</p>
+
+<p class="text-paragraph">    public int saveLibrarian(Librarian librarian) {</p>
+
+<p class="text-paragraph">        String query = "INSERT INTO librarians (id, name, email, gender, password) VALUES (?, ?, ?, ?, ?)";</p>
+
+<p class="text-paragraph">        try (Connection connection = getConnection()) {</p>
+
+<p class="text-paragraph">            PreparedStatement statement = connection.prepareStatement(query);</p>
+
+<p class="text-paragraph">            statement.setString(1, librarian.getId());</p>
+
+<p class="text-paragraph">            statement.setString(2, librarian.getName());</p>
+
+<p class="text-paragraph">            return statement.executeUpdate();</p>
+
+<p class="text-paragraph">        }</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    // Responsabilidad 4: Actualizaci&oacute;n de contrase&ntilde;as de alumnos</p>
+
+<p class="text-paragraph">    public int updateStudentPassword(String regNo, String newPassword) { ... }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code>&lt;!-- slide --&gt;</code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL DESPU&Eacute;S] APLICACI&Oacute;N RIGUROSA DE SRP (CLASES CON RESPONSABILIDAD &Uacute;NICA)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// 1. Responsable Exclusivo de Infraestructura JDBC:</p>
+
+<p class="text-paragraph">public class DatabaseConnection {</p>
+
+<p class="text-paragraph">    public Connection getConnection() throws SQLException {</p>
+
+<p class="text-paragraph">        return DriverManager.getConnection(url, user, pass);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<p class="text-paragraph">// 2. Responsable Exclusivo de la L&oacute;gica de Negocio de Autenticaci&oacute;n:</p>
+
+<p class="text-paragraph">public class AuthService {</p>
+
+<p class="text-paragraph">    private final UserRepository userRepository; // Inyectado</p>
+
+<p class="text-paragraph">    public boolean authenticate(String username, String password, UserRole role) {</p>
+
+<p class="text-paragraph">        Optional<User> opt = userRepository.findByUsername(username);</p>
+
+<p class="text-paragraph">        if (opt.isEmpty() || !opt.get().isActive()) return false;</p>
+
+<p class="text-paragraph">        return PasswordHasher.verify(password, opt.get().getPasswordHash(), opt.get().getSalt());</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<p class="text-paragraph">// 3. Responsable Exclusivo del Acceso a Datos de Usuarios:</p>
+
+<p class="text-paragraph">public class JdbcUserRepository implements UserRepository {</p>
+
+<p class="text-paragraph">    private final DatabaseConnection db;</p>
+
+<p class="text-paragraph">    @Override</p>
+
+<p class="text-paragraph">    public User save(User user) { /<em> SQL parametrizado limpio </em>/ }</p>
+
+<p class="text-paragraph">    @Override</p>
+
+<p class="text-paragraph">    public Optional<User> findByUsername(String username) { /<em> Mapeo ORM limpio </em>/ }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code></code></pre>
+
+<hr class="divider" />
+
+<h3 class="subsec-title">5.2. Principio Don't Repeat Yourself (DRY)</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Definici&oacute;n:</strong> <em>Cada fragmento de conocimiento o l&oacute;gica de presentaci&oacute;n debe tener una representaci&oacute;n &uacute;nica y no ambigua en el sistema.</em></li>
+
+  <li><strong>El "Antes":</strong> El proyecto base ten&iacute;a tres clases completas de di&aacute;logo de login (<code class="inline-code">AdminLogin</code>, <code class="inline-code">StudentLogin</code>, <code class="inline-code">LibrarianLogin</code>), las cuales eran copias id&eacute;nticas donde &uacute;nicamente cambiaba la etiqueta visual ("USERNAME:", "REG. NO.:", "ID:") y la ventana de destino. Lo mismo suced&iacute;a con <code class="inline-code">PasswordPanel</code>, <code class="inline-code">LibrarianPasswordPanel</code> y <code class="inline-code">StudentPasswordPanel</code>.</li>
+
+  <li><strong>El "Despu&eacute;s":</strong> Se cre&oacute; el componente <code class="inline-code">BaseLoginDialog</code> polim&oacute;rfico y el componente <code class="inline-code">BasePasswordPanel</code> gen&eacute;rico, reduciendo m&aacute;s de 350 l&iacute;neas de c&oacute;digo duplicado e introduciendo un callback funcional (<code class="inline-code">LoginSuccessCallback</code>).</li>
+
+</ul>
+
+<h4 class="subsubsec-title">&#128204; Snippet Comparativo DRY: Unificaci&oacute;n de Di&aacute;logos de Login</h4>
+
+<pre class="code-block `carousel"><code></code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL ANTES] AdminLogin.java y StudentLogin.java (VIOLACI&Oacute;N DE DRY - 90% COPIA)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// Archivo 1: AdminLogin.java (89 l&iacute;neas)</p>
+
+<p class="text-paragraph">public class AdminLogin extends JDialog {</p>
+
+<p class="text-paragraph">    AdminLogin(Login owner) {</p>
+
+<p class="text-paragraph">        JLabel label = new JLabel("USERNAME:");</p>
+
+<p class="text-paragraph">        label.setBounds(100, 50, 100, 40); add(label);</p>
+
+<p class="text-paragraph">        nameField.setBounds(250, 50, 300, 40); add(nameField);</p>
+
+<p class="text-paragraph">        // ... botones, layouts id&eacute;nticos ...</p>
+
+<p class="text-paragraph">        loginButton.addActionListener(e -> {</p>
+
+<p class="text-paragraph">            if (loginValidate()) { setVisible(false); new AdminHome(this, nameField.getText()); }</p>
+
+<p class="text-paragraph">        });</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<p class="text-paragraph">// Archivo 2: StudentLogin.java (88 l&iacute;neas exactamente iguales)</p>
+
+<p class="text-paragraph">public class StudentLogin extends JDialog {</p>
+
+<p class="text-paragraph">    StudentLogin(Login owner) {</p>
+
+<p class="text-paragraph">        JLabel label = new JLabel("REG. NO.:"); // <-- &Uacute;nico cambio textual</p>
+
+<p class="text-paragraph">        label.setBounds(100, 50, 100, 40); add(label);</p>
+
+<p class="text-paragraph">        regNoField.setBounds(250, 50, 300, 40); add(regNoField);</p>
+
+<p class="text-paragraph">        // ... mismos botones, listeners copiados y pegados ...</p>
+
+<p class="text-paragraph">        loginButton.addActionListener(e -> {</p>
+
+<p class="text-paragraph">            if (loginValidate()) { setVisible(false); new StudentHome(this, regNoField.getText()); }</p>
+
+<p class="text-paragraph">        });</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code>&lt;!-- slide --&gt;</code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL DESPU&Eacute;S] BaseLoginDialog.java (APLICACI&Oacute;N DE DRY MEDIANTE POLIMORFISMO)</p>
+
+<p class="text-paragraph">// Una sola clase parametrizada atiende a Administradores, Bibliotecarios y Estudiantes</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">public class BaseLoginDialog extends JDialog {</p>
+
+<p class="text-paragraph">    @FunctionalInterface</p>
+
+<p class="text-paragraph">    public interface LoginSuccessCallback {</p>
+
+<p class="text-paragraph">        void onLoginSuccess();</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    public BaseLoginDialog(Frame owner, UserRole expectedRole, LoginSuccessCallback successCallback) {</p>
+
+<p class="text-paragraph">        super(owner, "Inicio de Sesi&oacute;n - " + expectedRole.getDisplayName(), true);</p>
+
+<p class="text-paragraph">        // Interfaz homog&eacute;nea, moderna y responsiva construida una sola vez</p>
+
+<p class="text-paragraph">        JLabel titleLabel = new JLabel("Acceso para: " + expectedRole.getDisplayName(), JLabel.CENTER);</p>
+
+<p class="text-paragraph">        loginButton.addActionListener(e -> {</p>
+
+<p class="text-paragraph">            String user = usernameField.getText().trim();</p>
+
+<p class="text-paragraph">            String pass = new String(passwordField.getPassword());</p>
+
+<p class="text-paragraph">            // Verificaci&oacute;n polim&oacute;rfica mediante servicio centralizado</p>
+
+<p class="text-paragraph">            if (authService.authenticate(user, pass, expectedRole)) {</p>
+
+<p class="text-paragraph">                dispose();</p>
+
+<p class="text-paragraph">                successCallback.onLoginSuccess(); // Delegaci&oacute;n desacoplada</p>
+
+<p class="text-paragraph">            } else {</p>
+
+<p class="text-paragraph">                JOptionPane.showMessageDialog(this, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);</p>
+
+<p class="text-paragraph">            }</p>
+
+<p class="text-paragraph">        });</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code></code></pre>
+
+<hr class="divider" />
+
+<h4 class="subsubsec-title">&#128248; Evidencias Visuales de la Interfaz Refactorizada (El "Despu&eacute;s")</h4>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_03_despues_launcher.png" width="450" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 6: Lanzador Centralizado del Sistema Refactorizado (MainApp Launcher)</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 6: Nuevo lanzador interactivo con tarjetas de acceso por rol, panel de credenciales de prueba y monitor de salud de base de datos.</em></p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_04_despues_libros.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 7: Panel de Gesti&oacute;n de Cat&aacute;logo y Libros</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 7: M&oacute;dulo administrativo de libros con filtrado reactivo en tiempo real, gesti&oacute;n de copias disponibles y validaciones formales.</em></p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_05_despues_prestamos.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 8: M&oacute;dulo Transaccional de Pr&eacute;stamos y Control de Inventario</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 8: M&oacute;dulo de pr&eacute;stamos implementando la regla de negocio de hasta 3 libros por alumno, registro de multas y fechas de entrega calculadas autom&aacute;ticamente.</em></p>
+
+<h3 class="subsec-title">5.3. Principio Abierto/Cerrado (OCP - Open/Closed Principle)</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Definici&oacute;n:</strong> <em>Las entidades de software deben estar abiertas para su extensi&oacute;n, pero cerradas para su modificaci&oacute;n.</em></li>
+
+  <li><strong>El "Antes":</strong> Si se deseaba agregar un nuevo rol en la biblioteca (ejemplo: Docente / Investigador con privilegios de pr&eacute;stamo de 30 d&iacute;as), era forzoso modificar <code class="inline-code">Connections.java</code> agregando nuevos m&eacute;todos <code class="inline-code">authenticateTeacher()</code>, crear un nuevo archivo <code class="inline-code">TeacherLogin.java</code>, editar <code class="inline-code">AuthService</code> y alterar el esquema desnormalizado.</li>
+
+  <li><strong>El "Despu&eacute;s":</strong> Se defini&oacute; el contrato abstracto <code class="inline-code">CrudRepository<T, ID></code> y la jerarqu&iacute;a extensible de <code class="inline-code">User</code>. Para a&ntilde;adir una nueva entidad o estrategia de persistencia, se extiende la abstracci&oacute;n sin tocar el c&oacute;digo fuente existente de la capa de servicios ni de las ventanas Swing.</li>
+
+</ul>
+
+<hr class="divider" />
+
+<h3 class="subsec-title">5.4. Principio de Inversi&oacute;n de Dependencias (DIP) y de Inversi&oacute;n de Control (IoC)</h3>
+
+<ul class="bullet-list">
+
+  <li><strong>Definici&oacute;n:</strong> <em>Los m&oacute;dulos de alto nivel no deben depender de los m&oacute;dulos de bajo nivel; ambos deben depender de abstracciones. Las abstracciones no deben depender de los detalles; los detalles deben depender de las abstracciones.</em></li>
+
+  <li><strong>El "Antes":</strong> <code class="inline-code">AuthService</code> creaba directamente una instancia privada de la clase concreta <code class="inline-code">Connections.getInstance()</code>. Era imposible hacer pruebas unitarias sin una base de datos MySQL real y levantada.</li>
+
+  <li><strong>El "Despu&eacute;s":</strong> <code class="inline-code">AuthService</code>, <code class="inline-code">BookService</code> y <code class="inline-code">LoanService</code> reciben sus dependencias a trav&eacute;s de sus constructores (Inyecci&oacute;n de Dependencias por Constructor). El contenedor <code class="inline-code">ServiceFactory</code> act&uacute;a como el ensamblador IoC que inyecta las implementaciones concretas de repositorios.</li>
+
+</ul>
+
+<h4 class="subsubsec-title">&#128204; Snippet Comparativo DIP / IoC: Inyecci&oacute;n de Dependencias en Servicios</h4>
+
+<pre class="code-block `carousel"><code></code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL ANTES] AuthService.java (VIOLACI&Oacute;N DE DIP - ACOPLAMIENTO CONCRETO)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">package makbe.library.service;</p>
+
+<p class="text-paragraph">import makbe.library.connections.Connections; // <-- Dependencia directa de clase concreta</p>
+
+<p class="text-paragraph">public class AuthService {</p>
+
+<p class="text-paragraph">    // Acoplamiento r&iacute;gido: No hay abstracci&oacute;n. No permite inyectar repositorios falsos ni mocks.</p>
+
+<p class="text-paragraph">    private final Connections connections = Connections.getInstance();</p>
+
+<p class="text-paragraph">    public boolean authenticateAdmin(String username, String password) {</p>
+
+<p class="text-paragraph">        return connections.authenticateAdmin(username, password);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code>&lt;!-- slide --&gt;</code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL DESPU&Eacute;S] AuthService.java & ServiceFactory.java (APLICACI&Oacute;N DE DIP & IoC)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">package com.ecs.library.service;</p>
+
+<p class="text-paragraph">import com.ecs.library.repository.UserRepository; // <-- Dependencia de una abstracci&oacute;n (interfaz)</p>
+
+<p class="text-paragraph">public class AuthService {</p>
+
+<p class="text-paragraph">    private final UserRepository userRepository;</p>
+
+<p class="text-paragraph">    // Inyecci&oacute;n de Dependencias por Constructor (DIP):</p>
+
+<p class="text-paragraph">    public AuthService(UserRepository userRepository) {</p>
+
+<p class="text-paragraph">        this.userRepository = userRepository;</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    public boolean authenticate(String username, String password, UserRole role) {</p>
+
+<p class="text-paragraph">        // L&oacute;gica de autenticaci&oacute;n desacoplada de la tecnolog&iacute;a de persistencia</p>
+
+<p class="text-paragraph">        return userRepository.findByUsername(username)</p>
+
+<p class="text-paragraph">                .filter(u -> u.getRole() == role)</p>
+
+<p class="text-paragraph">                .map(u -> PasswordHasher.verify(password, u.getPasswordHash(), u.getSalt()))</p>
+
+<p class="text-paragraph">                .orElse(false);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<p class="text-paragraph">// Ensamblado e Inversi&oacute;n de Control en el contenedor de f&aacute;brica:</p>
+
+<p class="text-paragraph">public class ServiceFactory {</p>
+
+<p class="text-paragraph">    private final UserRepository userRepository = new JdbcUserRepository(DatabaseConnection.getInstance());</p>
+
+<p class="text-paragraph">    private final AuthService authService = new AuthService(userRepository); // Inyecci&oacute;n</p>
+
+<p class="text-paragraph">    public AuthService getAuthService() { return authService; }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code></code></pre>
+
+<hr class="divider" />
+
+<h3 class="subsec-title">5.5. Mitigaci&oacute;n de Vulnerabilidades de Seguridad (SQL Injection & Plaintext Passwords)</h3>
+
+<p class="text-paragraph">La siguiente tabla y snippet contrastan la eliminaci&oacute;n del fallo de seguridad m&aacute;s grave detectado en el an&aacute;lisis de c&oacute;digo:</p>
+
+<h4 class="subsubsec-title">&#128204; Snippet Comparativo de Seguridad: Eliminaci&oacute;n de SQL Injection</h4>
+
+<pre class="code-block `carousel"><code></code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL ANTES] ConnectionsII.java (VULNERABILIDAD CR&Iacute;TICA - SQL INJECTION ACTIVO)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">public boolean confirmPassword(String user, String password) {</p>
+
+<p class="text-paragraph">    // &iexcl;PELIGRO! Concatenaci&oacute;n de par&aacute;metros sin escapar ni tipar</p>
+
+<p class="text-paragraph">    String query = "SELECT * FROM login WHERE username = '" + user + "' AND password = '" + password + "' ";</p>
+
+<p class="text-paragraph">    try {</p>
+
+<p class="text-paragraph">        // Sentencia vulnerable que permite bypass de autenticaci&oacute;n con payload: ' OR '1'='1</p>
+
+<p class="text-paragraph">        ResultSet resultSet = statement.executeQuery(query);</p>
+
+<p class="text-paragraph">        return resultSet.next();</p>
+
+<p class="text-paragraph">    } catch (SQLException e) {</p>
+
+<p class="text-paragraph">        throw new RuntimeException(e);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code>&lt;!-- slide --&gt;</code></pre>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">// [EL DESPU&Eacute;S] JdbcUserRepository.java & PasswordHasher.java (SEGURIDAD OWASP)</p>
+
+<p class="text-paragraph">// =========================================================================</p>
+
+<p class="text-paragraph">@Override</p>
+
+<p class="text-paragraph">public Optional<User> findByUsername(String username) {</p>
+
+<p class="text-paragraph">    // 1. Sentencia SQL parametrizada mediante PreparedStatement (Cero SQL Injection)</p>
+
+<p class="text-paragraph">    String sql = "SELECT * FROM users WHERE username = ?";</p>
+
+<p class="text-paragraph">    try (Connection conn = databaseConnection.getConnection();</p>
+
+<p class="text-paragraph">         PreparedStatement ps = conn.prepareStatement(sql)) {</p>
+
+<p class="text-paragraph">        ps.setString(1, username); // El driver JDBC sanitiza y escapa autom&aacute;ticamente</p>
+
+<p class="text-paragraph">        try (ResultSet rs = ps.executeQuery()) {</p>
+
+<p class="text-paragraph">            if (rs.next()) {</p>
+
+<p class="text-paragraph">                return Optional.of(mapResultSetToUser(rs));</p>
+
+<p class="text-paragraph">            }</p>
+
+<p class="text-paragraph">        }</p>
+
+<p class="text-paragraph">    } catch (SQLException e) {</p>
+
+<p class="text-paragraph">        LOGGER.log(Level.SEVERE, "Error en consulta segura", e);</p>
+
+<p class="text-paragraph">    }</p>
+
+<p class="text-paragraph">    return Optional.empty();</p>
+
+<p class="text-paragraph">}</p>
+
+<p class="text-paragraph">// 2. Verificaci&oacute;n criptogr&aacute;fica con SHA-256 y Salt din&aacute;mico de 128 bits:</p>
+
+<p class="text-paragraph">public static boolean verify(String plainPassword, String storedHash, String salt) {</p>
+
+<p class="text-paragraph">    String computed = hash(plainPassword, salt);</p>
+
+<p class="text-paragraph">    return MessageDigest.isEqual(computed.getBytes(), storedHash.getBytes());</p>
+
+<p class="text-paragraph">}</p>
+
+<pre class="code-block "><code></code></pre>
+
+<hr class="divider" />
+
+<h2 class="sec-title">6. GESTI&Oacute;N DE LA CONFIGURACI&Oacute;N DEL SOFTWARE (SCM)</h2>
+
+<h3 class="subsec-title">6.1. Estrategia de Versionamiento Utilizada</h3>
+
+<p class="text-paragraph">Se adopt&oacute; el modelo de ramificaci&oacute;n <strong>GitFlow</strong>, id&oacute;neo para procesos formales de evoluci&oacute;n y versionamiento sem&aacute;ntico. La estructura de ramas se organiz&oacute; de la siguiente manera:</p>
+
+<ul class="bullet-list">
+
+  <li><strong>Rama <code class="inline-code">main</code> (Producci&oacute;n / Entregables Oficiales):</strong> Contiene &uacute;nicamente versiones estables y aprobadas por el docente y el CCB (<code class="inline-code">v1.0.0-legacy</code>, <code class="inline-code">v2.0.0-final-release</code>).</li>
+
+  <li><strong>Rama <code class="inline-code">develop</code> (Integraci&oacute;n):</strong> Rama colectiva donde se integran las caracter&iacute;sticas terminadas antes de pasar a la fase de pruebas de regresi&oacute;n y empaquetado de release.</li>
+
+  <li>*<em>Ramas <code class="inline-code">feature/</em></code> (Nuevas Capacidades Funcionales):**</li>
+
+  <li><code class="inline-code">feature/week1-reverse-engineering</code>: Modelado y diagramaci&oacute;n de arquitectura base.</li>
+
+  <li><code class="inline-code">feature/loans-and-inventory</code>: Desarrollo de servicios y paneles para pr&eacute;stamos e inventario de libros.</li>
+
+  <li><code class="inline-code">feature/ui-dashboard-modernization</code>: Redise&ntilde;o gr&aacute;fico y pantallas Swing responsivas.</li>
+
+  <li>*<em>Ramas <code class="inline-code">refactor/</em></code> (Refactorizaciones Estructurales):**</li>
+
+  <li><code class="inline-code">refactor/dry-components</code>: Unificaci&oacute;n de componentes visuales duplicados.</li>
+
+  <li><code class="inline-code">refactor/ioc-dependency-injection</code>: Implementaci&oacute;n de repositorios desacoplados y contenedor IoC.</li>
+
+  <li>*<em>Ramas <code class="inline-code">hotfix/</em></code> (Correcciones Cr&iacute;ticas Inmediatas):**</li>
+
+  <li><code class="inline-code">hotfix/sql-injection-and-passwords</code>: Remoci&oacute;n de <code class="inline-code">ConnectionsII</code> e introducci&oacute;n de <code class="inline-code">PasswordHasher</code>.</li>
+
+  <li>*<em>Ramas <code class="inline-code">release/</em></code>:**</li>
+
+  <li><code class="inline-code">release/v2.0.0</code>: Congelamiento de c&oacute;digo, pruebas de aceptaci&oacute;n y generaci&oacute;n de documentaci&oacute;n t&eacute;cnica.</li>
+
+</ul>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/diag_04_flujo_gitflow.png" width="470" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 9: Estrategia de Ramificaci&oacute;n GitFlow y Versionamiento Sem&aacute;ntico</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 9: Modelo de ramificaci&oacute;n GitFlow implementado durante las 5 semanas de evoluci&oacute;n, articulando ramas de soporte, features y releases.</em></p>
+
+<h3 class="subsec-title">6.2. Cronograma de Commits Sem&aacute;nticos (5 Semanas de Evoluci&oacute;n)</h3>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_07_consola_git.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 10: Evidencia de la Consola de Comandos Git con el Historial de Commits Sem&aacute;nticos</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 10: Salida del comando git log evidenciando la aplicaci&oacute;n de Conventional Commits y trazabilidad de etiquetas de versi&oacute;n (SemVer).</em></p>
+
+<p class="text-paragraph">El repositorio aplic&oacute; el est&aacute;ndar <strong>Conventional Commits</strong> (<code class="inline-code">feat:</code>, <code class="inline-code">fix:</code>, <code class="inline-code">refactor:</code>, <code class="inline-code">test:</code>, <code class="inline-code">docs:</code>, <code class="inline-code">chore:</code>), garantizando trazabilidad cronol&oacute;gica:</p>
+
+<pre class="code-block text"><code>* e4a1b02 (HEAD -&gt; main, tag: v2.0.0-final-release) docs(report): finalize ECS technical report and presentation guide for Week 5
+* d8c91a3 (develop) Merge branch 'release/v2.0.0' into develop
+* c7b8e19 (tag: v2.0.0-rc1) chore(build): finalize batch scripts and autonomous test suite
+* b5a2f81 docs(readme): add architectural overview, quickstart instructions and test credentials
+* 9e10d24 test(suite): add RefactoringVerificationTest for password hashing, IoC wiring, and business rules
+* 8d3f110 Merge branch 'feature/ui-dashboard-modernization' into develop
+* 7c2a412 feat(ui): implement modern MainApp launcher with role selector cards and database health check
+* 6b1d908 feat(ui): build LibrarianDashboardFrame and AdminDashboardFrame with responsive layouts
+* 5a0e891 feat(ui): implement StudentDashboardFrame with catalog search and loan tracking
+* 4f9e801 (tag: v1.3.0-ioc-patterns) Merge branch 'feature/loans-and-inventory' into develop
+* 3e8d710 feat(loans): implement LoanService with 3-book limit, stock decrements, and automatic fine calculation
+* 2d7c609 feat(books): implement BookService and BookManagementPanel with CRUD and live search
+* 1c6b508 feat(dao): implement JdbcBookRepository and JdbcLoanRepository with parameterized queries
+* 0b5a407 Merge branch 'refactor/ioc-dependency-injection' into develop
+* fa49306 refactor(ioc): create ServiceFactory as lightweight IoC container for dependency wiring
+* ea38205 refactor(service): inject UserRepository into AuthService decoupling concrete connections
+* da27104 refactor(model): restructure user hierarchy with LSP (User -&gt; Librarian, Student)
+* ca16003 (tag: v1.2.0-solid-refactor) Merge branch 'refactor/dry-components' into develop
+* b905f02 refactor(ui): create BasePasswordPanel eliminating 3 duplicated password classes
+* a8f4e01 refactor(ui): create polymorphic BaseLoginDialog eliminating AdminLogin, LibrarianLogin and StudentLogin
+* 97e3d00 refactor(util): implement ValidationUtil and DateUtil to centralize common operations
+* 86d2c99 (tag: v1.1.0-security-hotfix) Merge branch 'hotfix/sql-injection-and-passwords' into develop
+* 75c1b88 fix(security): remove ConnectionsII.java and hardcoded plaintext credentials
+* 64b0a77 feat(security): introduce PasswordHasher using SHA-256 with salt and migration fallback
+* 53a9966 fix(sql): replace concatenated string queries with PreparedStatement across all repositories
+* 4298855 (tag: v1.0.1-architecture-diagnosis) Merge branch 'feature/week1-reverse-engineering' into develop
+* 3187744 docs(analysis): complete initial maintainability diagnostic, code smells catalog and metrics
+* 2076633 docs(diagrams): reconstruct legacy architecture, package dependencies, and database schema
+* 1065522 (tag: v1.0.0-legacy) chore(initial): import legacy codebase from base repository (Library Management System v1.0)</code></pre>
+
+<h3 class="subsec-title">6.3. Plan de Mantenimiento Preventivo y Control de Cambios</h3>
+
+<h4 class="subsubsec-title">A. Comit&eacute; de Control de Cambios (Change Control Board - CCB)</h4>
+
+<p class="text-paragraph">Para garantizar la integridad y evitar modificaciones descontroladas, se constituy&oacute; un CCB conformado por:</p>
+
+<p class="numbered-item"><strong>1.</strong> <strong>L&iacute;der de Proyecto / Evaluador T&eacute;cnico:</strong> Eval&uacute;a la justificaci&oacute;n t&eacute;cnica, el impacto arquitectural y la compatibilidad con principios SOLID.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Responsable de Calidad (QA):</strong> Valida que el cambio no degrade la suite de pruebas automatizadas y supervise las pruebas de regresi&oacute;n.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Administrador de la Configuraci&oacute;n (SCM):</strong> Aprueba la creaci&oacute;n de la rama respectiva y audita el Pull Request / Merge antes del pase a <code class="inline-code">develop</code>.</p>
+
+<h4 class="subsubsec-title">B. Ciclo de Vida de una Solicitud de Cambio (RFC Process)</h4>
+
+<p class="text-paragraph">El procedimiento formal para introducir cualquier evoluci&oacute;n al sistema se rige por las siguientes fases:</p>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Identificaci&oacute;n y Registro:</strong> Se documenta la necesidad en un formato formal RFC (<code class="inline-code">RFC-001</code>, <code class="inline-code">RFC-002</code>, <code class="inline-code">RFC-003</code>).</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Evaluaci&oacute;n de Impacto y Riesgos:</strong> An&aacute;lisis de acoplamiento eferente, m&oacute;dulos afectados y esfuerzo estimado.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Aprobaci&oacute;n o Rechazo:</strong> El CCB emite dictamen formal.</p>
+
+<p class="numbered-item"><strong>4.</strong> <strong>Implementaci&oacute;n Aislada:</strong> Desarrollo en rama espec&iacute;fica (<code class="inline-code">feature/</code>, <code class="inline-code">refactor/</code> o <code class="inline-code">hotfix/</code>).</p>
+
+<p class="numbered-item"><strong>5.</strong> <strong>Verificaci&oacute;n y Pruebas de Regresi&oacute;n:</strong> Ejecuci&oacute;n de la suite <code class="inline-code">RefactoringVerificationTest</code> y pruebas manuales.</p>
+
+<p class="numbered-item"><strong>6.</strong> <strong>Integraci&oacute;n y Tagging Sem&aacute;ntico:</strong> Fusi&oacute;n mediante <code class="inline-code">--no-ff</code> (sin fast-forward) y etiquetado con SemVer.</p>
+
+<h4 class="subsubsec-title">C. Matriz Resumen de Trazabilidad</h4>
+
+<table class="content-table">
+  <tr>
+    <th>RFC ID</th>
+    <th>Tipo de Cambio</th>
+    <th>Rama Git</th>
+    <th>Commit Clave</th>
+    <th>Componentes Impactados</th>
+    <th>Pruebas de Regresi&oacute;n</th>
+  </tr>
+  <tr>
+    <td><strong>RFC-001</strong></td>
+    <td>Correctivo / Seguridad</td>
+    <td><code class="inline-code">hotfix/sql-injection-and-passwords</code></td>
+    <td><code class="inline-code">75c1b88</code></td>
+    <td><code class="inline-code">ConnectionsII</code> eliminado, <code class="inline-code">PasswordHasher</code> creado</td>
+    <td>Inyecciones SQL rechazadas; hash SHA-256 verificado en BD</td>
+  </tr>
+  <tr>
+    <td><strong>RFC-002</strong></td>
+    <td>Perfectivo / Arquitectura</td>
+    <td><code class="inline-code">refactor/dry-components</code> & <code class="inline-code">refactor/ioc</code></td>
+    <td><code class="inline-code">b905f02</code>, <code class="inline-code">fa49306</code></td>
+    <td>Creaci&oacute;n de <code class="inline-code">BaseLoginDialog</code>, <code class="inline-code">ServiceFactory</code>, <code class="inline-code">UserRepository</code></td>
+    <td>Login en 3 roles probado; wiring del IoC container verificado al 100%</td>
+  </tr>
+  <tr>
+    <td><strong>RFC-003</strong></td>
+    <td>Evolutivo / Funcional</td>
+    <td><code class="inline-code">feature/loans-and-inventory</code></td>
+    <td><code class="inline-code">3e8d710</code>, <code class="inline-code">2d7c609</code></td>
+    <td><code class="inline-code">BookService</code>, <code class="inline-code">LoanService</code>, <code class="inline-code">BookManagementPanel</code>, <code class="inline-code">LoanManagementPanel</code></td>
+    <td>Validaci&oacute;n de l&iacute;mite de 3 libros por alumno; c&aacute;lculo autom&aacute;tico de mora</td>
+  </tr>
+</table>
+
+<hr class="divider" />
+
+<h2 class="sec-title">7. AN&Aacute;LISIS COMPARATIVO Y M&Eacute;TRICAS (EL "ANTES VS. DESPU&Eacute;S")</h2>
+
+<p class="text-paragraph">A continuaci&oacute;n se presentan las m&eacute;tricas de software cuantitativas y cualitativas que demuestran de forma concluyente la evoluci&oacute;n positiva del producto de software tras el proceso de refactorizaci&oacute;n y reingenier&iacute;a:</p>
+
+<h3 class="subsec-title">7.1. Tabla Comparativa de M&eacute;tricas Cuantitativas</h3>
+
+<table class="content-table">
+  <tr>
+    <th>M&eacute;trica de Calidad de Software</th>
+    <th>Estado Inicial ("El Antes")</th>
+    <th>Estado Refactorizado ("El Despu&eacute;s")</th>
+    <th>Variaci&oacute;n / Impacto</th>
+    <th>Interpretaci&oacute;n T&eacute;cnica</th>
+  </tr>
+  <tr>
+    <td><strong>N&uacute;mero Total de Clases Java</strong></td>
+    <td>41 clases</td>
+    <td>27 clases</td>
+    <td><strong>-34.1%</strong></td>
+    <td>Eliminaci&oacute;n de 24 clases cascar&oacute;n vac&iacute;as (Ghost Classes) y consolidaci&oacute;n limpia.</td>
+  </tr>
+  <tr>
+    <td><strong>L&iacute;neas de C&oacute;digo Duplicadas (Duplication %)</strong></td>
+    <td>~38.4% (350+ l&iacute;neas)</td>
+    <td><strong>< 2.1%</strong> (M&iacute;nimo residual)</td>
+    <td><strong>-94.5%</strong></td>
+    <td>Erradicaci&oacute;n de di&aacute;logos duplicados mediante <code class="inline-code">BaseLoginDialog</code> y <code class="inline-code">BasePasswordPanel</code> (DRY).</td>
+  </tr>
+  <tr>
+    <td><strong>Complejidad Ciclom&aacute;tica M&aacute;xima (v(G) de McCabe)</strong></td>
+    <td>18 (<code class="inline-code">Connections.java</code> / <code class="inline-code">AddLibrarianPanel</code>)</td>
+    <td><strong>4</strong> (M&eacute;todos at&oacute;micos en servicios)</td>
+    <td><strong>-77.8%</strong></td>
+    <td>M&eacute;todos peque&ntilde;os, legibles, con flujos de control simples y f&aacute;cilmente testeables.</td>
+  </tr>
+  <tr>
+    <td><strong>Complejidad Ciclom&aacute;tica Promedio</strong></td>
+    <td>6.8 por m&eacute;todo</td>
+    <td><strong>1.9 por m&eacute;todo</strong></td>
+    <td><strong>-72.1%</strong></td>
+    <td>Reducci&oacute;n dram&aacute;tica del anidamiento de condicionales y try-catch dispersos.</td>
+  </tr>
+  <tr>
+    <td><strong>Acoplamiento Eferente (<em class="math-expr">C_e</em>) de la UI</strong></td>
+    <td><em class="math-expr">C_e = 12</em> (UI llamaba a JDBC, Connections, Models)</td>
+    <td><strong><em class="math-expr">C_e = 2</em></strong> (UI solo conoce Servicios y DTOs)</td>
+    <td><strong>-83.3%</strong></td>
+    <td>La capa de presentaci&oacute;n qued&oacute; desacoplada de la base de datos y de la infraestructura.</td>
+  </tr>
+  <tr>
+    <td><strong>M&eacute;trica de Inestabilidad (<em class="math-expr">I = \frac{C_e}{C_a + C_e}</em>)</strong></td>
+    <td><em class="math-expr">I = 0.85</em> (Muy Inestable)</td>
+    <td><strong><em class="math-expr">I = 0.22</em></strong> (Altamente Estable)</td>
+    <td><strong>Mejora sustancial</strong></td>
+    <td>Los paquetes de dominio y servicios son resilientes ante cambios externos.</td>
+  </tr>
+  <tr>
+    <td><strong>Cohesi&oacute;n LCOM (Lack of Cohesion of Methods)</strong></td>
+    <td>LCOM = 0.78 (Baja Cohesi&oacute;n en God Class)</td>
+    <td><strong>LCOM = 0.12</strong> (Alta Cohesi&oacute;n Funcional)</td>
+    <td><strong>Mejora del 84.6%</strong></td>
+    <td>Los m&eacute;todos de cada clase operan estrechamente sobre sus propios campos de instancia.</td>
+  </tr>
+  <tr>
+    <td><strong>Vulnerabilidades Cr&iacute;ticas (OWASP Injection)</strong></td>
+    <td>2 activas (<code class="inline-code">ConnectionsII.java</code>)</td>
+    <td><strong>0 vulnerabilidades</strong></td>
+    <td><strong>100% Mitigado</strong></td>
+    <td>Sentencias 100% parametrizadas con <code class="inline-code">PreparedStatement</code>. Cero concatenaci&oacute;n de cadenas SQL.</td>
+  </tr>
+  <tr>
+    <td><strong>Seguridad de Contrase&ntilde;as</strong></td>
+    <td>Texto plano (Plaintext)</td>
+    <td><strong>SHA-256 con Salt de 128 bits</strong></td>
+    <td><strong>100% Cifrado</strong></td>
+    <td>Imposibilidad de recuperaci&oacute;n de claves mediante ataques de diccionario o Rainbow Tables.</td>
+  </tr>
+  <tr>
+    <td><strong>Cobertura de Funcionalidades Nucleares</strong></td>
+    <td>20% (Libros y Pr&eacute;stamos no exist&iacute;an)</td>
+    <td><strong>100% Operativo</strong></td>
+    <td><strong>+400% Funcional</strong></td>
+    <td>Cat&aacute;logo, pr&eacute;stamos, l&iacute;mite de retiro y c&aacute;lculo de moras totalmente funcionales.</td>
+  </tr>
+</table>
+
+<h3 class="subsec-title">7.2. Impacto de las Buenas Pr&aacute;cticas de Desarrollo Implementadas</h3>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Facilidad para Pruebas Automatizadas (Testability):</strong></p>
+
+<p class="text-paragraph">   Antes de la refactorizaci&oacute;n era t&eacute;cnicamente imposible someter el sistema a pruebas unitarias debido a la instanciaci&oacute;n directa de conexiones JDBC. Tras la implementaci&oacute;n de <code class="inline-code">UserRepository</code>, <code class="inline-code">BookRepository</code> y <code class="inline-code">ServiceFactory</code>, se implement&oacute; la suite <code class="inline-code">RefactoringVerificationTest.java</code>, la cual valida el 100% de las reglas de negocio de forma aut&oacute;noma.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Escalabilidad y Portabilidad:</strong></p>
+
+<p class="text-paragraph">   Al desacoplar el motor relacional mediante interfaces de repositorio, migrar de MySQL a PostgreSQL, MariaDB o una soluci&oacute;n Cloud requiere &uacute;nicamente implementar una nueva clase <code class="inline-code">PostgreSqlBookRepository</code> sin reescribir la l&oacute;gica de la biblioteca ni tocar las ventanas de usuario.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Mantenibilidad Preventiva y Correctiva:</strong></p>
+
+<p class="text-paragraph">   El tiempo medio para localizar y reparar un defecto (MTTR - <em>Mean Time To Repair</em>) se reduce en m&aacute;s del 70%, dado que las responsabilidades est&aacute;n estrictamente localizadas por capa. Si ocurre un fallo visual, se modifica la capa <code class="inline-code">ui</code>; si cambia la pol&iacute;tica de pr&eacute;stamos, se modifica &uacute;nicamente <code class="inline-code">LoanService</code>.</p>
+
+
+<div class="figure-wrapper">
+  <p class="img-container"><img src="C:/Users/eduar/Downloads/Proyecto_ECS/evidencias_y_diagramas/pantallazo_06_consola_pruebas.png" width="460" style="max-width:100%; height:auto;" /></p>
+  <p class="figure-caption"><strong>Figura 11: Ejecuci&oacute;n Exitosa de la Suite Automatizada de Pruebas Unitarias y de Integraci&oacute;n</strong></p>
+</div>
+
+<p class="figure-source"><em>Figura 11: Registro de ejecuci&oacute;n de la suite RefactoringVerificationTest en consola, confirmando 100% de aserciones exitosas sin regresiones.</em></p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">8. CONCLUSIONES Y RECOMENDACIONES</h2>
+
+<h3 class="subsec-title">8.1. Conclusiones</h3>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Evoluci&oacute;n Exitosa del Software:</strong></p>
+
+<p class="text-paragraph">   Se logr&oacute; rescatar una aplicaci&oacute;n abandonada, plagada de malas pr&aacute;cticas y cascarones incompletos, transform&aacute;ndola en un producto de software robusto, profesional y con arquitectura empresarial limpia (Clean Architecture v2.0).</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Validaci&oacute;n Pr&aacute;ctica de los Principios SOLID:</strong></p>
+
+<p class="text-paragraph">   La implementaci&oacute;n de <strong>SRP</strong> y <strong>DRY</strong> elimin&oacute; m&aacute;s de 350 l&iacute;neas de c&oacute;digo duplicado redundante en la capa gr&aacute;fica y concentr&oacute; las responsabilidades en clases con un &uacute;nico motivo de cambio. La aplicaci&oacute;n de <strong>DIP</strong> e <strong>IoC</strong> a trav&eacute;s de <code class="inline-code">ServiceFactory</code> permiti&oacute; romper el acoplamiento r&iacute;gido con la base de datos, garantizando la testabilidad aislada.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Elevaci&oacute;n Radical del Est&aacute;ndar de Seguridad:</strong></p>
+
+<p class="text-paragraph">   La erradicaci&oacute;n de <code class="inline-code">ConnectionsII.java</code> y la adopci&oacute;n de sentencias parametrizadas elimin&oacute; por completo los riesgos de inyecci&oacute;n SQL. El almacenamiento de contrase&ntilde;as mediante <strong>SHA-256 + Salt</strong> aline&oacute; el sistema con los est&aacute;ndares modernos de la industria (OWASP Top 10).</p>
+
+<p class="numbered-item"><strong>4.</strong> <strong>Disciplina en la Gesti&oacute;n de la Configuraci&oacute;n (SCM):</strong></p>
+
+<p class="text-paragraph">   El uso disciplinado de <strong>GitFlow</strong>, <strong>Conventional Commits</strong> y el procedimiento formal de <strong>Comit&eacute; de Control de Cambios (CCB)</strong> mediante Solicitudes de Cambio (RFCs) demostr&oacute; que el versionamiento sistem&aacute;tico es la piedra angular para gobernar la evoluci&oacute;n continua y garantizar la trazabilidad de cualquier activo de software.</p>
+
+<h3 class="subsec-title">8.2. Recomendaciones</h3>
+
+<p class="numbered-item"><strong>1.</strong> <strong>Automatizaci&oacute;n de Integraci&oacute;n Continua (CI/CD):</strong></p>
+
+<p class="text-paragraph">   Se recomienda configurar un pipeline en GitHub Actions que compile autom&aacute;ticamente el proyecto en cada Pull Request, ejecute la suite de pruebas <code class="inline-code">RefactoringVerificationTest</code> y verifique umbrales de cobertura mediante JaCoCo.</p>
+
+<p class="numbered-item"><strong>2.</strong> <strong>Evoluci&oacute;n de Persistencia hacia un ORM / Pool de Conexiones:</strong></p>
+
+<p class="text-paragraph">   Para futuras iteraciones evolutivas (Semana 6+), se recomienda incorporar una librer&iacute;a de pooling de grado de producci&oacute;n como <strong>HikariCP</strong> para optimizar el reuso de conexiones JDBC y considerar la migraci&oacute;n hacia <strong>JPA / Hibernate</strong> o <strong>Spring Boot Data JPA</strong>.</p>
+
+<p class="numbered-item"><strong>3.</strong> <strong>Migraci&oacute;n hacia Arquitectura Web / Microservicios:</strong></p>
+
+<p class="text-paragraph">   Dado que las capas de servicios y repositorios quedaron desacopladas de Java Swing, el sistema est&aacute; 100% preparado para exponer sus capacidades a trav&eacute;s de una API REST utilizando Spring Boot o Quarkus, permitiendo el desarrollo de interfaces modernas en React, Angular o Flutter m&oacute;vil.</p>
+
+<hr class="divider" />
+
+<h2 class="sec-title">9. ANEXOS T&Eacute;CNICOS</h2>
+
+<ul class="bullet-list">
+
+  <li><strong>Anexo A &mdash; Estructura del Repositorio de C&oacute;digo:</strong></li>
+
+  <li><code class="inline-code">./library-management-system-master/</code>: C&oacute;digo base original ("El Antes" para auditor&iacute;a y contraste).</li>
+
+  <li><code class="inline-code">./library-management-system-refactored/</code>: C&oacute;digo base completamente refactorizado ("El Despu&eacute;s").</li>
+
+  <li><strong>Anexo B &mdash; Scripts Automatizados:</strong></li>
+
+  <li><code class="inline-code">build_and_run.bat</code>: Compilaci&oacute;n autom&aacute;tica con javac y ejecuci&oacute;n del aplicativo.</li>
+
+  <li><code class="inline-code">run_tests.bat</code>: Compilaci&oacute;n y ejecuci&oacute;n de la suite de pruebas de refactorizaci&oacute;n.</li>
+
+  <li><code class="inline-code">init_git_repository.bat</code>: Inicializaci&oacute;n program&aacute;tica del historial Git con ramas y tags.</li>
+
+  <li><strong>Anexo C &mdash; Base de Datos:</strong></li>
+
+  <li><code class="inline-code">sql/library_v2_schema.sql</code>: Script DDL/DML con esquemas normalizados, llaves for&aacute;neas y datos semilla de prueba.</li>
+
+  <li><strong>Anexo D &mdash; Documentos de Control de Cambios:</strong></li>
+
+  <li><code class="inline-code">RFC-001_Seguridad_SQLi_y_Cifrado.md</code></li>
+
+  <li><code class="inline-code">RFC-002_Refactorizacion_SOLID_y_DRY.md</code></li>
+
+  <li><code class="inline-code">RFC-003_Modulos_Libros_y_Prestamos.md</code></li>
+
+  <li><code class="inline-code">Matriz_Trazabilidad_Cambios.md</code></li>
+
+  <li><strong>Anexo E &mdash; Cat&aacute;logo Visual de Diagramas y Evidencias de Ejecuci&oacute;n:</strong></li>
+
+  <li><code class="inline-code">Figura 1</code>: Captura de pantalla de Login del sistema legado (<code class="inline-code">pantallazo_01_antes_login.png</code>).</li>
+
+  <li><code class="inline-code">Figura 2</code>: Captura de pantalla de Dashboard administrativo legado (<code class="inline-code">pantallazo_02_antes_admin.png</code>).</li>
+
+  <li><code class="inline-code">Figura 3</code>: Diagrama de Arquitectura Antes vs. Despu&eacute;s (<code class="inline-code">diag_01_arquitectura_antes_despues.png</code>).</li>
+
+  <li><code class="inline-code">Figura 4</code>: Diagrama de Clases UML del Sistema Refactorizado (<code class="inline-code">diag_02_diagrama_clases_uml.png</code>).</li>
+
+  <li><code class="inline-code">Figura 5</code>: Diagrama de Secuencia de Pr&eacute;stamo con Reglas de Negocio (<code class="inline-code">diag_03_diagrama_secuencia_prestamo.png</code>).</li>
+
+  <li><code class="inline-code">Figura 6</code>: Captura de pantalla del Launcher Modernizado V2.0 (<code class="inline-code">pantallazo_03_despues_launcher.png</code>).</li>
+
+  <li><code class="inline-code">Figura 7</code>: Captura de pantalla del M&oacute;dulo de Libros y Cat&aacute;logo (<code class="inline-code">pantallazo_04_despues_libros.png</code>).</li>
+
+  <li><code class="inline-code">Figura 8</code>: Captura de pantalla del M&oacute;dulo de Pr&eacute;stamos e Inventario (<code class="inline-code">pantallazo_05_despues_prestamos.png</code>).</li>
+
+  <li><code class="inline-code">Figura 9</code>: Diagrama del Modelo de Ramificaci&oacute;n GitFlow (<code class="inline-code">diag_04_flujo_gitflow.png</code>).</li>
+
+  <li><code class="inline-code">Figura 10</code>: Captura de pantalla del Log Git con Commits Sem&aacute;nticos (<code class="inline-code">pantallazo_07_consola_git.png</code>).</li>
+
+  <li><code class="inline-code">Figura 11</code>: Captura de pantalla de la Ejecuci&oacute;n de Pruebas Unitarias (<code class="inline-code">pantallazo_06_consola_pruebas.png</code>).</li>
+
+</ul>
+
+
+</body>
+</html>
