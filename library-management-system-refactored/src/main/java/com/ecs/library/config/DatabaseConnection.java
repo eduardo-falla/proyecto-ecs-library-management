@@ -105,8 +105,81 @@ public class DatabaseConnection {
         try (Connection conn = getConnection()) {
             return conn != null && !conn.isClosed();
         } catch (SQLException e) {
-            LOGGER.log(Level.WARNING, "Prueba de conexión fallida: " + e.getMessage());
+            LOGGER.info("Base de datos no detectada. Intentando auto-creación en MySQL...");
+            if (initializeDatabaseIfMissing()) {
+                try (Connection retryConn = getConnection()) {
+                    return retryConn != null && !retryConn.isClosed();
+                } catch (SQLException ex) {
+                    LOGGER.warning("Reintento fallido: " + ex.getMessage());
+                }
+            }
             return false;
+        }
+    }
+
+    public synchronized boolean initializeDatabaseIfMissing() {
+        String host = properties.getProperty("db.host", "localhost");
+        String port = properties.getProperty("db.port", "3306");
+        String name = properties.getProperty("db.name", "library_management_system");
+        String useSSL = properties.getProperty("db.useSSL", "false");
+        String timezone = properties.getProperty("db.serverTimezone", "UTC");
+        String allowPublicKey = properties.getProperty("db.allowPublicKeyRetrieval", "true");
+        String user = properties.getProperty("db.username", "root");
+        String pass = properties.getProperty("db.password", "");
+
+        String serverUrl = String.format("jdbc:mysql://%s:%s/?useSSL=%s&serverTimezone=%s&allowPublicKeyRetrieval=%s",
+                host, port, useSSL, timezone, allowPublicKey);
+
+        try (Connection serverConn = DriverManager.getConnection(serverUrl, user, pass);
+             java.sql.Statement stmt = serverConn.createStatement()) {
+
+            stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + name + " CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+            LOGGER.info("Base de datos '" + name + "' verificada o creada con éxito.");
+
+            // Ejecutar script SQL de esquema y tablas si existen
+            File sqlFile = new File("sql/library_v2_schema.sql");
+            if (!sqlFile.exists()) {
+                sqlFile = new File("library-management-system-refactored/sql/library_v2_schema.sql");
+            }
+            if (sqlFile.exists()) {
+                executeSqlScript(sqlFile);
+            }
+            return true;
+        } catch (SQLException e) {
+            LOGGER.warning("No se pudo auto-inicializar la BD (MySQL podría estar apagado): " + e.getMessage());
+            return false;
+        }
+    }
+
+    private void executeSqlScript(File sqlFile) {
+        try (Connection conn = getConnection();
+             java.sql.Statement stmt = conn.createStatement();
+             java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader(sqlFile, java.nio.charset.StandardCharsets.UTF_8))) {
+
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (line.startsWith("--") || line.startsWith("/*") || line.isEmpty()) {
+                    continue;
+                }
+                sb.append(line).append(" ");
+                if (line.endsWith(";")) {
+                    String sql = sb.toString().trim();
+                    sb.setLength(0);
+                    // Omitir comandos que cambian de base de datos a nivel global si ya estamos conectados
+                    if (!sql.toUpperCase().startsWith("DROP DATABASE") && !sql.toUpperCase().startsWith("CREATE DATABASE") && !sql.toUpperCase().startsWith("USE ")) {
+                        try {
+                            stmt.execute(sql);
+                        } catch (SQLException ex) {
+                            LOGGER.fine("Comando SQL omitido o ya existente: " + ex.getMessage());
+                        }
+                    }
+                }
+            }
+            LOGGER.info("Esquema relacional y datos semilla poblados exitosamente.");
+        } catch (Exception e) {
+            LOGGER.warning("Advertencia al ejecutar script SQL inicial: " + e.getMessage());
         }
     }
 
