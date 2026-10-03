@@ -1,37 +1,44 @@
 @echo off
+setlocal
 chcp 65001 > nul
+cd /d "%~dp0"
+
 echo ===============================================================================
-echo   SISTEMA BASE ORIGINAL - LIBRARY MANAGEMENT SYSTEM (EL "ANTES")
-echo   Compilando y ejecutando versión monolítica v1.0.0-legacy...
+echo   SISTEMA BASE ORIGINAL - LIBRARY MANAGEMENT SYSTEM (EL ANTES)
+echo   Compilando y ejecutando version monolitica v1.0.0-legacy...
 echo ===============================================================================
 echo.
 
 where javac >nul 2>nul
-if %ERRORLEVEL% NEQ 0 (
-    echo [ERROR] No se encontró 'javac' en tu sistema.
-    echo Debes tener instalado Java JDK (11, 17 o superior) para compilar y ejecutar.
-    echo Puedes descargarlo gratis desde https://adoptium.net
+if errorlevel 1 (
+    echo [ERROR] No se encontro javac en tu sistema.
+    echo Debes tener instalado Java JDK 11 o superior.
     echo.
     pause
-    exit /b
+    exit /b 1
 )
 
 if not exist "bin" mkdir bin
 
 echo [1/2] Compilando clases Java del sistema legado...
-dir /s /b src\*.java > sources.txt
-javac -encoding UTF-8 -d bin -cp "lib\*" @sources.txt
+dir /s /b "src\*.java" > sources.txt
+javac -encoding UTF-8 -d bin -cp "lib/*" @sources.txt
 del sources.txt
 
-if %ERRORLEVEL% NEQ 0 (
-    echo [ERROR] Falló la compilación del sistema legado.
+if errorlevel 1 (
+    echo [ERROR] Fallo la compilacion del sistema legado.
     pause
-    exit /b
+    exit /b 1
 )
 
-echo [2/2] Iniciando aplicación Java Swing original...
-echo (Recuerda tener activo MySQL en localhost:3306 con la base de datos 'library' importada de library.sql)
 echo.
-java -cp "bin;lib\*" makbe.library.main.Main
+echo [2/2] Iniciando aplicacion Java Swing original...
+echo Base de datos configurada: library_management_system_legacy
+echo.
+java -cp "bin;lib/*" makbe.library.main.Main
 
-pause
+if errorlevel 1 (
+    echo.
+    echo [AVISO] La aplicacion se cerro con codigo de salida %ERRORLEVEL%.
+    pause
+)
