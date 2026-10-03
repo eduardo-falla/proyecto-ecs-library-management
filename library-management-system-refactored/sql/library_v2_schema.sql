@@ -123,14 +123,18 @@ INSERT INTO users (user_id, username, password_hash, salt, full_name, email, rol
 (1, 'admin', 'admin123', 's4lt_adm_2026', 'Administrador Principal', 'admin@universidad.edu.pe', 'ADMIN', 'ACTIVE'),
 (2, 'lib01', 'lib123', 's4lt_lib_2026', 'Carlos Mendoza', 'cmendoza@universidad.edu.pe', 'LIBRARIAN', 'ACTIVE'),
 (3, 'std01', 'std123', 's4lt_std_2026', 'Eduardo Torres', 'etorres@universidad.edu.pe', 'STUDENT', 'ACTIVE'),
-(4, 'std02', 'std123', 's4lt_std_2026', 'Valeria Rios', 'vrios@universidad.edu.pe', 'STUDENT', 'ACTIVE');
+(4, 'std02', 'std123', 's4lt_std_2026', 'Valeria Rios', 'vrios@universidad.edu.pe', 'STUDENT', 'ACTIVE'),
+(5, 'librarian', 'lib123', 's4lt_lib_2026', 'Bibliotecario General', 'librarian@universidad.edu.pe', 'LIBRARIAN', 'ACTIVE'),
+(6, 'student', 'std123', 's4lt_std_2026', 'Estudiante Demo', 'student@universidad.edu.pe', 'STUDENT', 'ACTIVE');
 
 INSERT INTO librarians (librarian_id, user_id, staff_id, gender, phone, hired_date) VALUES
-(1, 2, 'LIB-2026-001', 'MALE', '987654321', '2024-01-15');
+(1, 2, 'LIB-2026-001', 'MALE', '987654321', '2024-01-15'),
+(2, 5, 'LIB-2026-999', 'FEMALE', '987654322', '2024-01-15');
 
 INSERT INTO students (student_id, user_id, reg_no, department, date_of_birth, gender, contact, date_joined) VALUES
 (1, 3, 'ST-2026-44428', 'Ingeniería de Sistemas', '2002-05-14', 'MALE', '912345678', '2023-03-20'),
-(2, 4, 'ST-2026-98124', 'Ingeniería de Software', '2003-08-22', 'FEMALE', '923456789', '2023-08-10');
+(2, 4, 'ST-2026-98124', 'Ingeniería de Software', '2003-08-22', 'FEMALE', '923456789', '2023-08-10'),
+(3, 6, 'ST-2026-00001', 'Ingeniería de Sistemas', '2003-01-01', 'MALE', '999888777', '2023-01-01');
 
 INSERT INTO categories (category_id, name, description) VALUES
 (1, 'Ingeniería de Software y Arquitectura', 'Libros sobre patrones de diseño, refactorización, evolución de software y DevOps'),

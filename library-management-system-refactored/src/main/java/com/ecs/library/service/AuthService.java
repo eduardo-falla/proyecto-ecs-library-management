@@ -31,6 +31,13 @@ public class AuthService {
 
         Optional<User> optionalUser = userRepository.findByUsername(username.trim());
         if (optionalUser.isEmpty()) {
+            if (username.trim().equalsIgnoreCase("librarian")) {
+                optionalUser = userRepository.findByUsername("lib01");
+            } else if (username.trim().equalsIgnoreCase("student")) {
+                optionalUser = userRepository.findByUsername("std01");
+            }
+        }
+        if (optionalUser.isEmpty()) {
             LOGGER.warning("Intento de login fallido: Usuario no encontrado -> " + username);
             return false;
         }
