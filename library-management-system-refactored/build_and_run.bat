@@ -13,17 +13,17 @@ echo [1/3] Buscando archivos Java...
 dir /s /b src\main\java\*.java > sources.txt
 
 echo [2/3] Compilando proyecto con javac...
-javac -encoding UTF-8 -cp "lib/*;bin" -d bin @sources.txt
+javac -encoding UTF-8 -cp "lib\mysql-connector-java-8.0.29.jar;lib\rs2xml.jar;bin" -d bin @sources.txt
 
 if %ERRORLEVEL% EQU 0 (
     echo [OK] Compilación exitosa.
-    del sources.txt
+    if exist sources.txt del sources.txt
     echo.
     echo [3/3] Iniciando Sistema de Gestión de Biblioteca v2.0...
-    java -cp "bin;lib/*;src/main/resources" com.ecs.library.ui.MainApp
+    java -cp "bin;lib\mysql-connector-java-8.0.29.jar;lib\rs2xml.jar;src\main\resources" com.ecs.library.ui.MainApp
 ) else (
     echo.
-    echo [ERROR] La compilación falló. Verifique que Java JDK 11 o superior esté instalado en el PATH.
-    del sources.txt
+    echo [ERROR] La compilación falló.
+    if exist sources.txt del sources.txt
     pause
 )
