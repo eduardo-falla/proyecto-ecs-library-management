@@ -32,6 +32,6 @@ if %ERRORLEVEL% NEQ 0 (
 echo [2/2] Iniciando aplicación Java Swing original...
 echo (Recuerda tener activo MySQL en localhost:3306 con la base de datos 'library' importada de library.sql)
 echo.
-java -cp "bin;lib\*" makbe.library.main.LibraryManagementSystem
+java -cp "bin;lib\*" makbe.library.main.Main
 
 pause

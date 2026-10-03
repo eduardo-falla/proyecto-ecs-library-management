@@ -1,11 +1,14 @@
 package makbe.library.admin;
 
 import makbe.library.constants.Gender;
+import makbe.library.connections.Connections;
 import makbe.library.model.Librarian;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
+import static makbe.library.constants.Fonts.buttonFont;
 import static makbe.library.constants.Fonts.defaultFont;
 import static makbe.library.constants.Fonts.displayFont;
 
@@ -132,7 +135,8 @@ public class AddLibrarianPanel extends JPanel {
 		if (validateFields()) {
 			if (validatePassword()) {
 				Connections connections = Connections.getInstance();
-				int rows = connections.saveLibrarian(new Librarian(id, name, email, password));
+				Gender gender = (Gender) genderBox.getSelectedItem();
+				int rows = connections.saveLibrarian(new Librarian(id, name, email, gender, password));
 				if (rows >= 1) {
 					JOptionPane.showMessageDialog(this, "Librarian added successfully", null, JOptionPane.INFORMATION_MESSAGE);
 					clearFields();
