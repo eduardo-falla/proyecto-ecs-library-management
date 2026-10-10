@@ -14,13 +14,13 @@
 
 ---
 
-## 📋 Resumen Ejecutivo del Proyecto
+##  Resumen Ejecutivo del Proyecto
 
 Este repositorio contiene la evolución y reingeniería completa del sistema legado **Library Management System (v1.0)** hacia una **Arquitectura Limpia Multicapa (v2.0)** desacoplada, aplicando principios **SOLID**, seguridad criptográfica (SHA-256 + Salt), mitigación total de Inyecciones SQL, y un modelo formal de Gestión de Configuración (**GitFlow** y **Conventional Commits** a lo largo de 5 semanas académicas).
 
 ---
 
-## 🏛️ Estructura del Repositorio
+##  Estructura del Repositorio
 
 ```text
 proyecto-ecs-library-management/
@@ -40,7 +40,7 @@ proyecto-ecs-library-management/
 
 ---
 
-## 🚀 Inicio Rápido (Quickstart)
+##  Inicio Rápido (Quickstart)
 
 ### 1. Requisitos Previos
 * **Java Development Kit (JDK 11, 17 o superior)** instalado en el sistema.
@@ -67,7 +67,7 @@ run_tests.bat
 
 ---
 
-## 🔑 Credenciales de Prueba
+##  Credenciales de Prueba
 
 | Rol | Usuario | Contraseña | Capacidades |
 | :--- | :--- | :--- | :--- |
@@ -77,7 +77,7 @@ run_tests.bat
 
 ---
 
-## 🌿 Historial de Versiones y Tags SemVer
+##  Historial de Versiones y Tags SemVer
 
 * **`v1.0.0-legacy`**: Importación del código base monolítico legado.
 * **`v1.0.1-architecture-diagnosis`**: Diagnóstico de mantenibilidad y code smells.
